@@ -44,7 +44,7 @@ pnpm dlx shadcn@latest add <component> -c apps/web
 Import the installed component in app code:
 
 ```tsx
-import { Button } from "@workspace/ui/components/button"
+import { Button } from '@workspace/ui/components/button';
 ```
 
 ### Next.js version note

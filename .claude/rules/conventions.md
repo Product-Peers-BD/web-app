@@ -1,12 +1,12 @@
 # Project Conventions
 
-> Referenced from root `CLAUDE.md`. Applies to `apps/web`, `apps/dashboard`, `apps/api` (planned), and shared `packages/*`.
+> Referenced from root `CLAUDE.md`. Applies to `apps/web`, `apps/dashboard`, `apps/api`, and shared `packages/*`.
 
 ## Apps
 
 - **web** — Next.js app for the public website (landing pages) and user-facing dashboard.
 - **dashboard** — Next.js app for admin and team members.
-- **api** _(planned, not yet scaffolded)_ — Node.js backend.
+- **api** — Node.js backend (Express 5 + TypeScript, dev server on port 3500).
     - Express.js for routing.
     - PostgreSQL as primary database, via Prisma ORM.
     - Redis for caching and session management.
@@ -16,7 +16,6 @@
     - AWS S3 for file storage.
     - Swagger for API documentation.
     - Sentry for error monitoring.
-    - Folder structure and naming for this app will be defined when it is scaffolded.
 
 ## Packages
 
@@ -28,7 +27,7 @@ Packages are created per feature/functionality; each has its own `src/` folder w
     - `src/enums` — API-related enums and parameter options.
 - **`packages/utils`** _(planned)_ — common utility functions shared across apps (debounce, throttle, date helpers, etc.).
 
-> When `apps/api`, `packages/api-services`, or `packages/utils` are scaffolded, also add them to the Architecture section of root `CLAUDE.md`.
+> When `packages/api-services` or `packages/utils` are scaffolded, also add them to the Architecture section of root `CLAUDE.md`.
 
 ## Code style
 
@@ -77,6 +76,24 @@ Enforced by the `import/order` ESLint rule. Groups, separated by a blank line, e
 - `contexts/` — app/feature-level contexts and providers
 - `schemas/` — Zod validation/transformation schemas
 - `utils/` — app-level utility functions
+
+## Folder structure (`apps/api`)
+
+All source lives in `src/` — entry point `src/index.ts`, Express app setup in `src/app.ts`:
+
+- `configs/` — env loading and app configuration
+- `constants/` — static content as constants
+- `controllers/` — request handlers (thin — delegate to services)
+- `enums/` — backend enums
+- `middlewares/` — Express middleware (auth, error handling, validation)
+- `routes/` — route definitions, mounted under `/api`
+- `schemas/` — Zod validation schemas
+- `services/` — business logic
+- `sockets/` — WebSocket handlers
+- `types/` — types & interfaces
+- `utils/` — utility functions
+
+The Prisma schema (`prisma/` at the app root) will be added when the database layer is set up.
 
 ## Shared UI package (`packages/ui`)
 

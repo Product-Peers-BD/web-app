@@ -14,6 +14,8 @@
     - JWT for authentication.
     - Bkash for payments.
     - AWS S3 for file storage.
+    - Swagger for API documentation.
+    - Sentry for error monitoring.
     - Folder structure and naming for this app will be defined when it is scaffolded.
 
 ## Packages

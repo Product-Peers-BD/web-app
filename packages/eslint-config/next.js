@@ -101,7 +101,13 @@ export const nextJsConfig = [
 						'internal',
 						['parent', 'sibling', 'index']
 					],
-					'newlines-between': 'always'
+					pathGroups: [
+						{ pattern: '@workspace/**', group: 'internal' },
+						{ pattern: '@/**', group: 'internal' }
+					],
+					pathGroupsExcludedImportTypes: ['builtin'],
+					'newlines-between': 'always',
+					alphabetize: { order: 'asc', caseInsensitive: true }
 				}
 			],
 			'import/newline-after-import': 'warn',

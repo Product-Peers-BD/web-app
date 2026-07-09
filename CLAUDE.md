@@ -21,6 +21,10 @@ pnpm --filter @workspace/ui typecheck
 
 **Format command caveat**: each package's `format` script only runs `prettier --write` over `**/*.{ts,tsx}`. CI's format check (see below) additionally covers `.js`, `.jsx`, `.mjs`, `.cjs`, `.css`, `.json`, and `.md`. Running `pnpm format` locally will not catch everything CI checks — when in doubt, run `pnpm prettier --check "**/*.{ts,tsx,js,jsx,mjs,cjs,css,json,md}"` from the root before pushing.
 
+## Conventions
+
+Coding conventions — naming, folder structure, import order, code style, database naming — are defined in `.claude/rules/conventions.md`. Follow them for all code in `apps/*` and `packages/*`.
+
 ## Architecture
 
 This is a **pnpm + Turborepo monorepo** with two workspace groups:

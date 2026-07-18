@@ -26,8 +26,13 @@ Packages are created per feature/functionality; each has its own `src/` folder w
     - `src/models` — API payload, response, and query-param types.
     - `src/enums` — API-related enums and parameter options.
 - **`packages/utils`** _(planned)_ — common utility functions shared across apps (debounce, throttle, date helpers, etc.).
+- **`packages/media-library`** _(planned)_ — shared file/image upload and picker, backed by S3 with CDN-served URLs. Used wherever any feature needs file/image uploads (Events, Contests, Case Studies, Articles, etc.) — no feature should implement its own upload handling.
+- **`packages/editor`** _(planned)_ — shared Tiptap-based rich text editor component, JSON output. Used for all rich text fields (Event/Contest descriptions, Articles, Case Studies, etc.).
+- **`packages/threads`** _(planned)_ — discussion-thread system (thread creation, approval, pinning, announcements). Used by Events and Contests discussion features, and later Case Studies.
+- **`packages/comments`** _(planned)_ — global commenting/replies system, one level of replies, @mentions, image attachments. Used inside `packages/threads`-powered discussions, and directly on Articles/Case Studies.
+- **`packages/payments`** _(planned)_ — payment handling, built as a pluggable provider interface. Bkash is the only implemented gateway for now; the interface should allow adding new gateways later without reworking calling code (Event/Contest registration, etc.).
 
-> When `packages/api-services` or `packages/utils` are scaffolded, also add them to the Architecture section of root `CLAUDE.md`.
+> When any planned package is scaffolded, also add it to the Architecture section of root `CLAUDE.md`.
 
 ## Code style
 
@@ -133,6 +138,18 @@ Use snake_case only — no hyphens (PostgreSQL identifiers with hyphens require 
 - Column names: lowercase snake_case — e.g. `blog_details`, `user_profile`.
 - Relationship (foreign key) columns: `<singular_table>_id` — e.g. `blog_id`, `user_profile_id`.
 - Enum values: UPPER_SNAKE_CASE — e.g. `DRAFT`, `PUBLISHED`.
+
+## Cross-feature architectural conventions
+
+These apply project-wide, surfaced while defining feature requirements in `docs/requirements/`:
+
+- **Never expose internal integer primary keys.** Every table gets an internal auto-increment integer PK (for fast joins/index performance) plus a separate indexed `uuid` column (consider UUIDv7 for better index locality than random UUIDv4), generated on insert. Only the `uuid` is ever exposed in API responses or URLs.
+- **Every publicly addressable entity gets a slug.** Backend-generated, unique, editable later (Events, Event Type/Category/Tag, Contests, Sponsors, Articles, Case Studies, etc.).
+- **No background jobs for scheduled visibility.** Prefer computing visibility at read time — e.g. `status == PUBLISHED AND (scheduled_at IS NULL OR scheduled_at <= now())` — over cron/worker jobs, for scheduled publish, registration-open countdowns, and similar timing logic. Only introduce an actual job/worker when a real side effect is required (e.g. sending a notification email at that moment).
+- **Snapshot associations that must preserve history.** When an association can change over time but past state must remain accurate (e.g. which members represented a given team in a specific past contest), model it as a dedicated snapshot/junction record tied to that point in time — not a live foreign key that silently rewrites history when the underlying data changes.
+- **All file/image uploads go through `packages/media-library`.** No feature implements its own one-off upload handling.
+- **All rich text fields use `packages/editor`.** Content is persisted as JSON (Tiptap's format), never raw HTML.
+- **Entity deletion policy is feature-specific — don't assume one universal rule.** For example, Sponsors/Tiers block deletion while in use; Event Category/Tag allow deletion and simply detach from referencing records instead. Check the specific feature's file under `docs/requirements/` before implementing delete behavior for a new entity.
 
 ## Git conventions
 

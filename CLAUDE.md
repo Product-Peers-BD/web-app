@@ -25,6 +25,10 @@ pnpm --filter @workspace/ui typecheck
 
 Coding conventions — naming, folder structure, import order, code style, database naming — are defined in `.claude/rules/conventions.md`. Follow them for all code in `apps/*` and `packages/*`.
 
+## Requirements & Business Logic
+
+Feature requirements and business logic are defined in `docs/requirements/`. Start with `docs/requirements/progress-report.md` for an index of what's covered and what's still pending before implementing any feature — it links out to the relevant detailed file (e.g. `events-requirements.md`, `contests-requirements.md`, `shared-features.md`, `roles-and-auth.md`).
+
 ## Architecture
 
 This is a **pnpm + Turborepo monorepo** with two workspace groups:

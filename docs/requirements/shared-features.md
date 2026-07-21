@@ -99,3 +99,30 @@ Shared payment handling, used wherever `is_premium` applies — currently **Even
 
 - Additional payment gateways are planned beyond Bkash. This implies the payment logic should be built as a **pluggable/abstracted provider layer** from the start — Event/Contest code calls a generic "process payment" interface rather than being hard-wired to Bkash specifically, so a new gateway can be added later without reworking Event/Contest registration logic.
 - Payment lives as its own shared package, own `packages/` directory in the Turborepo — same pattern as Media Library/Thread System/Global Commenting.
+
+---
+
+## Follow System
+
+Shared, reusable following mechanism — first surfaced via Articles/Case Studies ("follow the author"), but applies to both **Users** (public profile, `/u/{username}`) and **Teams** (public profile, `/t/{teamSlug}`).
+
+- Any authenticated platform user can follow another User's public profile, or a Team's public profile.
+- Follower count is shown publicly on both User and Team profile pages.
+- Purely a follow/follower relationship for now — **no algorithmic feed yet**. A future phase will introduce a news feed showing latest activity from followed Users/Teams, plus platform-suggested relevant activity — **explicitly deferred, not built now**.
+
+## Team Public Profile
+
+URL: `https://landing-url.com/t/{teamSlug}` — unique, backend-generated slug per team at creation, editable later by Admin.
+
+**Shown on the Team profile page:**
+
+- Team profile image, banner, team name, current team leader.
+- **Follow button** (see Follow System above).
+- **Current member roster** — the team's global/current member list (as originally defined in `contests-requirements.md`), shown in its own tab.
+- **Activities Timeline** — a separate tab, chronological (latest-to-oldest by default, visitor can flip to oldest-to-latest; further filters TBD), covering: team created, attended a Contest (with team leader + participating members at that time), won a Contest, and Team Leader updates to the team's Name, Profile Image (logo), or Banner.
+
+**Team Leader edit capability:** when the authenticated Team Leader (of a given contest's participating team — see `contests-requirements.md`) browses their own Team's Public Profile page, they see an **Edit** option allowing them to update the team's **Name**, **Description**, **Profile Image** (team logo), and **Banner**. No other team member has this edit access — it's specific to whoever currently holds the Team Leader designation.
+
+Only the **current leader** (i.e. most-recently-assigned Team Leader, across any of the team's contests) has edit access at any given time.
+
+_(Note: the per-contest membership snapshot behavior defined in `contests-requirements.md` — team rosters can differ contest-to-contest — still applies to what's shown in the Activities Timeline and in each Contest's own team listing. The roster tab here shows the team's current/global membership, which is a separate concept from any single contest's snapshot.)_

@@ -87,7 +87,7 @@ _(Note: profile photo/bio/title fields live in the core Member profile — see `
 - A team member only appears in that team's public list **if they've personally registered for the contest** — being on the team roster isn't sufficient; registration is what makes them visible as a contest participant.
 - Admin can ban/remove a team or an individual team member from a contest at any time; banned entities disappear from the public contest page.
 - **Per-contest membership snapshot**: since a team's roster can differ across contests (admin swaps members over time), the system must store _which members represented a given team in a given contest_ — analogous to a football club's squad differing by season/competition. This is not just "current team roster" — it's a historical, per-contest record.
-- Team Leader: admin can designate one member as leader when adding the team to a contest (only if the team doesn't already have one), and can reassign it any time among the contest's registered team members. Ornamental role only — no functional logic attached.
+- Team Leader: admin can designate one member as leader when adding the team to a contest (only if the team doesn't already have one), and can reassign it any time among the contest's registered team members. Beyond this ornamental designation, the Team Leader has one functional capability: when authenticated and browsing the Team's own Public Profile page, they see an **Edit** option to update the team's Name, Description, Profile Image (team logo), and Banner (see `shared-features.md` → Team Public Profile).
 - **Team size**: a team can exist with zero members (created empty by admin). Per-contest settings define **minimum and maximum members per participating team**, defaulting to **min 1 / max 5**. A team can only be _added to a contest_ once its member count satisfies that contest's min/max range. Adding a team to a contest also still requires a Team Leader to be set (see above).
 
 ---
@@ -180,7 +180,7 @@ Per-contest settings define:
 - **Sponsors** — Tier + Sponsor master lists managed globally by Admin; attached per-Contest via Tier→Sponsors association. See `shared-features.md` → Sponsors.
 - **Publishing/scheduling pattern** — reuses Events' read-time visibility computation (no background job) for both contest publish and result-publish target date.
 - **Slugs & UUIDs** — same project-wide convention as Events (backend-generated unique slug; UUID exposed externally, never the internal id).
-- **Roles & Auth** — Judges are Mentors; see `docs/requirements/roles-and-auth.md` for the full role model (Super Admin, Admin, Mentor, Member) and constraints (e.g. Admins/Mentors cannot be contest participants).
+- **Roles & Auth** — Judges are Mentor-badge holders (Mentor is a badge/capability, not a distinct role — see `docs/requirements/roles-and-auth.md`). Participation rule (revised): any Member can participate in a Contest regardless of Mentor badge, subject to an Admin-configurable setting (default `true`); the only hard exclusion is that a badge holder assigned as **Judge on a specific Contest** cannot also participate in _that same Contest_. Admin accounts still cannot be Contest participants.
 
 ## Deferred / explicitly out of scope for this phase
 

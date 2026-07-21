@@ -2,22 +2,22 @@
 
 > Living document — updated every time a feature's requirements doc is completed or meaningfully changed. Check this file instead of asking for a status recap.
 
-Last updated: 2026-07-18
+Last updated: 2026-07-22
 
 ---
 
 ## Core product features (from the project brief)
 
-| #   | Feature                                                 | Status         | File                                                        |
-| --- | ------------------------------------------------------- | -------------- | ----------------------------------------------------------- |
-| 1   | Events                                                  | ✅ Covered     | `docs/requirements/events-requirements.md`                  |
-| 2   | Contests                                                | ✅ Covered     | `docs/requirements/contests-requirements.md`                |
-| 3   | Case Studies                                            | ⬜ Not started | —                                                           |
-| 4   | Resources (member-submitted articles / curated content) | ⬜ Not started | —                                                           |
-| 5   | Mentorship (apply → review → book → 1:1 sessions)       | ⬜ Not started | —                                                           |
-| 6   | Products (member builder directory)                     | ⬜ Not started | —                                                           |
-| 7   | Sponsor Us                                              | ✅ Covered     | `docs/requirements/shared-features.md` (Sponsors section)   |
-| 8   | Contact                                                 | ✅ Covered     | `docs/requirements/shared-features.md` (Contact Us section) |
+| #   | Feature                                                                           | Status         | File                                                        |
+| --- | --------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------- |
+| 1   | Events                                                                            | ✅ Covered     | `docs/requirements/events-requirements.md`                  |
+| 2   | Contests                                                                          | ✅ Covered     | `docs/requirements/contests-requirements.md`                |
+| 3   | Case Studies                                                                      | ⬜ Not started | —                                                           |
+| 4   | Articles (renamed from "Resources" — member-submitted articles / curated content) | ⬜ Not started | —                                                           |
+| 5   | Mentorship (apply → review → book → 1:1 sessions)                                 | ⬜ Not started | —                                                           |
+| 6   | Products (member builder directory)                                               | ⬜ Not started | —                                                           |
+| 7   | Sponsor Us                                                                        | ✅ Covered     | `docs/requirements/shared-features.md` (Sponsors section)   |
+| 8   | Contact                                                                           | ✅ Covered     | `docs/requirements/shared-features.md` (Contact Us section) |
 
 ## Shared / supporting features
 
@@ -30,45 +30,48 @@ Last updated: 2026-07-18
 | 5   | Thread system (discussion threads — Events, Contests, later Case Studies)                 | ⬜ Not started | —                                      |
 | 6   | Global Commenting system (comments/replies)                                               | ⬜ Not started | —                                      |
 | 7   | Rich Text Editor (Tiptap, JSON output)                                                    | ⬜ Not started | —                                      |
+| 8   | Follow System (follow Users/Teams, follower counts)                                       | ✅ Covered     | `docs/requirements/shared-features.md` |
+| 9   | Team Public Profile (`/t/{teamSlug}`)                                                     | ✅ Covered     | `docs/requirements/shared-features.md` |
 
 ## Foundational
 
-| Feature                                                                     | Status     | File                                  |
-| --------------------------------------------------------------------------- | ---------- | ------------------------------------- |
-| Roles & Authentication (Super Admin, Admin, Mentor, Member, profile fields) | ✅ Covered | `docs/requirements/roles-and-auth.md` |
+| Feature                                                                                    | Status     | File                                  |
+| ------------------------------------------------------------------------------------------ | ---------- | ------------------------------------- |
+| Roles & Authentication (Super Admin, Admin, Member + Mentor Badge, unified public profile) | ✅ Covered | `docs/requirements/roles-and-auth.md` |
 
 ## Landing Pages (public interface)
 
 > Page-by-page UI/UX logic — separate from the feature-level business logic docs above, but can surface new requirements/schema needs.
 
-| #   | Page                                       | Status         | Notes                                                                                                                                      |
-| --- | ------------------------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | Landing Page                               | ⬜ Not started |                                                                                                                                            |
-| 2   | About Us page                              | ⬜ Not started |                                                                                                                                            |
-| 3   | Contact Us page                            | ⬜ Not started |                                                                                                                                            |
-| 4   | Sponsors page                              | ⬜ Not started | Renamed from "Sponsor Us" — combines the sponsor showcase (past/current, as social proof) with the pitch/inquiry section for new sponsors. |
-| 5   | Events Page                                | ⬜ Not started |                                                                                                                                            |
-| 6   | Single Event Details page                  | ⬜ Not started |                                                                                                                                            |
-| 7   | Contests Page                              | ⬜ Not started |                                                                                                                                            |
-| 8   | Single Contest Details page                | ⬜ Not started |                                                                                                                                            |
-| 9   | Case Studies Page                          | ⬜ Not started |                                                                                                                                            |
-| 10  | Single Case Study Details page             | ⬜ Not started |                                                                                                                                            |
-| 11  | Mentorship Page                            | ⬜ Not started |                                                                                                                                            |
-| 12  | Articles Page                              | ⬜ Not started |                                                                                                                                            |
-| 13  | Single Article Details Page                | ⬜ Not started |                                                                                                                                            |
-| 14  | Products Listing Page                      | ⬜ Not started |                                                                                                                                            |
-| 15  | Single Product Page                        | ⬜ Not started |                                                                                                                                            |
-| 16  | Join Community Page                        | ⬜ Not started |                                                                                                                                            |
-| 17  | Single Profile Page (Team, Mentor, Member) | ⬜ Not started |                                                                                                                                            |
-| 18  | Register Page (Member)                     | ⬜ Not started |                                                                                                                                            |
-| 19  | Login Page (Member)                        | ⬜ Not started |                                                                                                                                            |
-| 20  | Terms & Conditions page                    | ⬜ Not started |                                                                                                                                            |
-| 21  | Privacy Policy page                        | ⬜ Not started |                                                                                                                                            |
-| 22  | Global Search Results page                 | ⬜ Deferred    | Confirmed necessary, but planned for a **future phase**, not this one.                                                                     |
+| #   | Page                                                                                                             | Status         | Notes                                                                                                                                      |
+| --- | ---------------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Landing Page                                                                                                     | ⬜ Not started |                                                                                                                                            |
+| 2   | About Us page                                                                                                    | ⬜ Not started |                                                                                                                                            |
+| 3   | Contact Us page                                                                                                  | ⬜ Not started |                                                                                                                                            |
+| 4   | Sponsors page                                                                                                    | ⬜ Not started | Renamed from "Sponsor Us" — combines the sponsor showcase (past/current, as social proof) with the pitch/inquiry section for new sponsors. |
+| 5   | Events Page                                                                                                      | ⬜ Not started |                                                                                                                                            |
+| 6   | Single Event Details page                                                                                        | ⬜ Not started |                                                                                                                                            |
+| 7   | Contests Page                                                                                                    | ⬜ Not started |                                                                                                                                            |
+| 8   | Single Contest Details page                                                                                      | ⬜ Not started |                                                                                                                                            |
+| 9   | Case Studies Page                                                                                                | ⬜ Not started |                                                                                                                                            |
+| 10  | Single Case Study Details page                                                                                   | ⬜ Not started |                                                                                                                                            |
+| 11  | Mentorship Page                                                                                                  | ⬜ Not started |                                                                                                                                            |
+| 12  | Articles Page                                                                                                    | ⬜ Not started |                                                                                                                                            |
+| 13  | Single Article Details Page                                                                                      | ⬜ Not started |                                                                                                                                            |
+| 14  | Products Listing Page                                                                                            | ⬜ Not started |                                                                                                                                            |
+| 15  | Single Product Page                                                                                              | ⬜ Not started |                                                                                                                                            |
+| 16  | Join Community Page                                                                                              | ⬜ Not started |                                                                                                                                            |
+| 17  | Single Public Profile Page — unified for any user via `/u/{username}` (Admin/Member, Mentor badge shown if held) | ⬜ Not started | Updated model: one profile shape for everyone, no separate "type" per role. Super Admin has no public profile.                             |
+| 17b | Single Team Public Profile Page — `/t/{teamSlug}`                                                                | ⬜ Not started | Separate from user profiles; own slug, own page.                                                                                           |
+| 18  | Register Page (Member)                                                                                           | ⬜ Not started |                                                                                                                                            |
+| 19  | Login Page (Member)                                                                                              | ⬜ Not started |                                                                                                                                            |
+| 20  | Terms & Conditions page                                                                                          | ⬜ Not started |                                                                                                                                            |
+| 21  | Privacy Policy page                                                                                              | ⬜ Not started |                                                                                                                                            |
+| 22  | Global Search Results page                                                                                       | ⬜ Deferred    | Confirmed necessary, but planned for a **future phase**, not this one.                                                                     |
 
 **Resolved:**
 
-- No Forgot Password page needed — Member auth has no password. Instead, Members can **link multiple OAuth providers** to one account (e.g. registered via Google, later connects LinkedIn too — or vice versa — and can log in with either afterward). _(Flag: this account-linking logic belongs in `roles-and-auth.md` — will add there.)_
+- No Forgot Password page needed — Member auth has no password. Instead, Members can **link multiple OAuth providers** to one account (e.g. registered via Google, later connects LinkedIn too — or vice versa — and can log in with either afterward). Documented in `docs/requirements/roles-and-auth.md`.
 
 ## Member Dashboard Panel (logged-in member)
 
@@ -85,22 +88,25 @@ Last updated: 2026-07-18
 | 9   | Create/Edit Case Study or Article Page                    | ⬜ Not started |                                                                                                                                          |
 | 10  | Draft Preview Page (private view)                         | ⬜ Not started |                                                                                                                                          |
 
-**Still open:**
+**Resolved:**
 
-- Mentor/Judge dashboard views — undecided whether these live inside the Member Dashboard Panel or the Admin Dashboard. To be decided later.
+- **Mentor-badge dashboard placement**: depends on the underlying account type, not a separate dashboard.
+    - If the badge holder is a **Member**, all Mentor-related capabilities (judging, speaker info, etc.) surface within their existing **Member Dashboard Panel**.
+    - If the badge holder is an **Admin**, they already have full Admin Dashboard access — no separate view needed. The one addition: in the Admin Dashboard's contest list, an Admin who is also a Judge on a given contest sees an indicator flagging that they're assigned as Judge there, making it easy to spot which contests need their judging attention.
 
 ---
 
 ## Summary
 
 - **4 of 8** core product features fully covered.
-- **3 of 7** shared/supporting features covered.
+- **5 of 9** shared/supporting features covered.
 - **1 of 1** foundational doc covered.
-- **0 of 22** Landing Pages discussed.
+- **0 of 23** Landing Pages discussed.
 - **0 of 10** Member Dashboard pages discussed.
-- Remaining core features: Case Studies, Resources, Mentorship, Products.
+- Remaining core features: Case Studies, Articles (renamed from Resources), Mentorship, Products.
 - Remaining shared infrastructure: Media Library, Thread System, Global Commenting, Rich Text Editor — all four are dependencies of the remaining core features, so worth resolving before or alongside them.
 - Landing Pages and Member Dashboard Panel haven't been started — likely best tackled after the remaining core features, since page content depends on the underlying feature logic being settled first.
+- **Major restructure (this round)**: Mentor is no longer a standalone role — it's now a "badge" attachable to Admin or Member accounts. Public profiles were also unified into a single model (`/u/{username}`) regardless of role. See `roles-and-auth.md` for full details; `contests-requirements.md`'s participation rule was updated accordingly.
 
 ## Notes for future updates
 

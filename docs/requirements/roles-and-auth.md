@@ -37,9 +37,10 @@ Without the badge, Admin **cannot** assign that user as a Speaker or Judge.
 ### Suspension
 
 - Admin can suspend a user's Mentor badge at any time.
-- If the badge holder currently has **active assignments** (Speaker on an upcoming/running Event, Judge on an upcoming/running Contest), Admin sees a **warning popup** before confirming suspension.
-- On confirmed suspension: **future assignment is blocked immediately** (this user can no longer be picked as Speaker/Judge going forward). **Existing assignments on already-scheduled Events/Contests are NOT auto-removed** — Admin must manually remove them individually if desired.
+- If the badge holder currently has **active assignments** (Speaker on an upcoming/running Event, Judge on an upcoming/running Contest, **or Requested/Upcoming Mentorship bookings** — see `mentorship-requirements.md`), Admin sees a **warning popup** before confirming suspension.
+- On confirmed suspension: **future assignment is blocked immediately** (this user can no longer be picked as Speaker/Judge, and can no longer receive new Mentorship booking requests, going forward). **Existing assignments on already-scheduled Events/Contests, and existing Mentorship bookings, are NOT auto-removed/auto-cancelled** — Admin must manually remove/cancel them individually if desired.
 - Suspension supports an optional **internal reason note** (Admin-only visibility) — same pattern as Contest's Judge Feedback / Contact Us admin notes.
+- **Mentorship eligibility can also be revoked independently**, without suspending the whole Mentor badge — a separate, simpler Admin toggle (see `mentorship-requirements.md`).
 
 ### Dashboard placement for badge holders
 

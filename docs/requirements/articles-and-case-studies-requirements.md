@@ -27,7 +27,18 @@ Admin manages Article Categories and Case Study Categories via **two separate da
 
 ---
 
-## Authorship & Review workflow
+## Curated Content (Articles only)
+
+A special filter/flag on Articles — not a separate content type, and not applicable to Case Studies.
+
+- A **"Curated Content"** checkbox appears on the Article create/edit page.
+- **Visibility of the checkbox**: only visible to **Admin** and to authors holding the **Mentor badge** — plain Members never see this field.
+- Checking it marks the article as Curated Content.
+- **Admin can mark or unmark curated status on _any_ article**, regardless of who authored it — this isn't limited to Admin's own submissions. A Mentor-badge author can presumably mark their own article on creation/edit, but only Admin has override authority across all articles.
+- **Article list API** supports a query param to filter curated articles: **`?is_curated=true`** (consistent with existing `is_premium`/`is_active`-style boolean flag naming).
+- **Public display**: on the Landing site's Article list page, curated articles show a **badge/icon** on the article card. Further UI/UX (e.g. a dedicated "Curated Picks" section, manual ordering among curated articles) is deferred to the Landing Pages design discussion.
+
+---
 
 - **Plain Members** (no Mentor badge): submissions go to `Pending Review`. Admin-only review.
 - **Mentor-badge holders** (Member or Admin account) and **Admin accounts generally** (regardless of whether they hold the badge): publish directly — no review step at all.
@@ -90,3 +101,4 @@ Note: **Associated Products** and **Associated Contests** are independent fields
 - Co-authorship / multiple authors.
 - Per-edit re-approval for Member-authored content after initial publish (future phase).
 - Rigid structured Problem/Solution/Result template for Case Studies (using free-form for now).
+- Curated Content display/ordering logic (e.g. dedicated "Curated Picks" section, manual ordering) — deferred to the Landing Pages UI/UX discussion.

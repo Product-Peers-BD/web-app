@@ -15,7 +15,7 @@ Last updated: 2026-07-22
 | 3   | Case Studies                                                                      | ✅ Covered     | `docs/requirements/articles-and-case-studies-requirements.md` |
 | 4   | Articles (renamed from "Resources" — member-submitted articles / curated content) | ✅ Covered     | `docs/requirements/articles-and-case-studies-requirements.md` |
 | 5   | Mentorship (apply → review → book → 1:1 sessions)                                 | ⬜ Not started | —                                                             |
-| 6   | Products (member builder directory)                                               | ⬜ Not started | —                                                             |
+| 6   | Products (member builder directory)                                               | ✅ Covered     | `docs/requirements/products-requirements.md`                  |
 | 7   | Sponsor Us                                                                        | ✅ Covered     | `docs/requirements/shared-features.md` (Sponsors section)     |
 | 8   | Contact                                                                           | ✅ Covered     | `docs/requirements/shared-features.md` (Contact Us section)   |
 
@@ -98,12 +98,12 @@ Last updated: 2026-07-22
 
 ## Summary
 
-- **6 of 8** core product features fully covered.
+- **7 of 8** core product features fully covered.
 - **5 of 9** shared/supporting features covered.
 - **1 of 1** foundational doc covered.
 - **0 of 23** Landing Pages discussed.
 - **0 of 10** Member Dashboard pages discussed.
-- Remaining core features: Mentorship, Products.
+- Remaining core features: Mentorship.
 - Remaining shared infrastructure: Media Library, Thread System, Global Commenting, Rich Text Editor — all four are dependencies of the remaining core features, so worth resolving before or alongside them.
 - Landing Pages and Member Dashboard Panel haven't been started — likely best tackled after the remaining core features, since page content depends on the underlying feature logic being settled first.
 - **Major restructure (this round)**: Mentor is no longer a standalone role — it's now a "badge" attachable to Admin or Member accounts. Public profiles were also unified into a single model (`/u/{username}`) regardless of role. See `roles-and-auth.md` for full details; `contests-requirements.md`'s participation rule was updated accordingly.

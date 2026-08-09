@@ -41,13 +41,14 @@ Same logic as Event's Discussions:
 
 - Admin or any authenticated platform user can start a thread (lightweight, "minimalistic Facebook post" style).
 - User-created threads require **admin approval** before appearing.
+- **Per-Contest setting**: Admin can independently allow **Mentor-badge holders to publish threads without approval** on this specific Contest (default: off — Mentor-badge holders require approval same as plain Members, unless Admin enables this override for the contest). Full behavior specced in `thread-system-requirements.md` § Publishing & moderation. _(Note: Judges on this Contest are Mentor-badge holders too — this setting doesn't distinguish Judge-vs-non-Judge Mentors, it applies to any Mentor-badge holder posting on this Contest.)_
 - Admin-created threads can be marked **Announcement**.
 - Admin can **pin** any thread.
 - Admin can **unapprove** a previously-approved thread, and can **edit or delete** any thread.
 - Threads support **top-level comments**, each with **one level of replies** (no nested replies-to-replies).
 - Users can **@mention** other users by username within a comment or reply.
-- A comment or reply can have **up to 3 images** attached; a Discussion thread (the original post) can have **up to 5 images** attached.
-- Discussion threads are powered by the shared **Thread system** package; comments/replies are powered by the separate **Global Commenting system** package — same as Events (see `docs/requirements/events.md`).
+- A comment or reply can have an **Admin-configurable number of images** attached (default **1** — see `global-commenting-requirements.md`); a Discussion thread (the original post) can have **up to 5 images** attached (fixed, not configurable).
+- Discussion threads are powered by the shared **Thread system** package (`thread-system-requirements.md`); comments/replies are powered by the separate **Global Commenting system** package — same as Events (see `events-requirements.md`).
 
 ---
 
@@ -175,7 +176,7 @@ Per-contest settings define:
 
 - **Rich text editor** (Tiptap) — Description field.
 - **Media Library** — Image Gallery, and the Presentation field's document-upload option.
-- **Thread system** — powers Discussion threads (own Turborepo package, shared with Events).
+- **Thread system** (`thread-system-requirements.md`) — powers Discussion threads (own Turborepo package, shared with Events).
 - **Global Commenting system** — powers comments/replies within Discussion threads (own Turborepo package, shared with Events, Articles, Case Studies).
 - **Sponsors** — Tier + Sponsor master lists managed globally by Admin; attached per-Contest via Tier→Sponsors association. See `shared-features.md` → Sponsors.
 - **Publishing/scheduling pattern** — reuses Events' read-time visibility computation (no background job) for both contest publish and result-publish target date.

@@ -2,36 +2,37 @@
 
 > Living document — updated every time a feature's requirements doc is completed or meaningfully changed. Check this file instead of asking for a status recap.
 
-Last updated: 2026-07-22
+Last updated: 2026-08-07 (rev. 10 — Admin & Super Admin Dashboard fully drafted, 40 pages; every planned feature area now covered)
 
 ---
 
 ## Core product features (from the project brief)
 
-| #   | Feature                                                                           | Status                    | File                                                          |
-| --- | --------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------- |
-| 1   | Events                                                                            | ✅ Covered                | `docs/requirements/events-requirements.md`                    |
-| 2   | Contests                                                                          | ✅ Covered                | `docs/requirements/contests-requirements.md`                  |
-| 3   | Case Studies                                                                      | ✅ Covered                | `docs/requirements/articles-and-case-studies-requirements.md` |
-| 4   | Articles (renamed from "Resources" — member-submitted articles / curated content) | ✅ Covered                | `docs/requirements/articles-and-case-studies-requirements.md` |
-| 5   | Mentorship (apply → review → book → 1:1 sessions)                                 | ✅ Covered (3 open flags) | `docs/requirements/mentorship-requirements.md`                |
-| 6   | Products (member builder directory)                                               | ✅ Covered                | `docs/requirements/products-requirements.md`                  |
-| 7   | Sponsor Us                                                                        | ✅ Covered                | `docs/requirements/shared-features.md` (Sponsors section)     |
-| 8   | Contact                                                                           | ✅ Covered                | `docs/requirements/shared-features.md` (Contact Us section)   |
+| #   | Feature                                                                           | Status     | File                                                          |
+| --- | --------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------- |
+| 1   | Events                                                                            | ✅ Covered | `docs/requirements/events-requirements.md`                    |
+| 2   | Contests                                                                          | ✅ Covered | `docs/requirements/contests-requirements.md`                  |
+| 3   | Case Studies                                                                      | ✅ Covered | `docs/requirements/articles-and-case-studies-requirements.md` |
+| 4   | Articles (renamed from "Resources" — member-submitted articles / curated content) | ✅ Covered | `docs/requirements/articles-and-case-studies-requirements.md` |
+| 5   | Mentorship (apply → review → book → 1:1 sessions)                                 | ✅ Covered | `docs/requirements/mentorship-requirements.md`                |
+| 6   | Products (member builder directory)                                               | ✅ Covered | `docs/requirements/products-requirements.md`                  |
+| 7   | Sponsor Us                                                                        | ✅ Covered | `docs/requirements/shared-features.md` (Sponsors section)     |
+| 8   | Contact                                                                           | ✅ Covered | `docs/requirements/shared-features.md` (Contact Us section)   |
 
 ## Shared / supporting features
 
-| #   | Feature                                                                                   | Status         | File                                   |
-| --- | ----------------------------------------------------------------------------------------- | -------------- | -------------------------------------- |
-| 1   | Sponsors (Sponsor + Sponsor Tier, Event/Contest attachment)                               | ✅ Covered     | `docs/requirements/shared-features.md` |
-| 2   | Contact Us (form, spam protection, search, export, admin triage)                          | ✅ Covered     | `docs/requirements/shared-features.md` |
-| 3   | Payment (Bkash now, pluggable for future gateways — used by Event & Contest registration) | ✅ Covered     | `docs/requirements/shared-features.md` |
-| 4   | Media Library (S3 + CDN, shared upload/picker)                                            | ⬜ Not started | —                                      |
-| 5   | Thread system (discussion threads — Events, Contests, later Case Studies)                 | ⬜ Not started | —                                      |
-| 6   | Global Commenting system (comments/replies)                                               | ⬜ Not started | —                                      |
-| 7   | Rich Text Editor (Tiptap, JSON output)                                                    | ⬜ Not started | —                                      |
-| 8   | Follow System (follow Users/Teams, follower counts)                                       | ✅ Covered     | `docs/requirements/shared-features.md` |
-| 9   | Team Public Profile (`/t/{teamSlug}`)                                                     | ✅ Covered     | `docs/requirements/shared-features.md` |
+| #   | Feature                                                                                                 | Status     | File                                                  |
+| --- | ------------------------------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------- |
+| 1   | Sponsors (Sponsor + Sponsor Tier, Event/Contest attachment)                                             | ✅ Covered | `docs/requirements/shared-features.md`                |
+| 2   | Contact Us (form, spam protection, search, export, admin triage)                                        | ✅ Covered | `docs/requirements/shared-features.md`                |
+| 3   | Payment (Bkash now, pluggable for future gateways — used by Event & Contest registration)               | ✅ Covered | `docs/requirements/shared-features.md`                |
+| 4   | Media Library (local disk storage this phase, S3 planned later — shared upload/picker)                  | ✅ Covered | `docs/requirements/media-library-requirements.md`     |
+| 5   | Thread system (discussion threads — Events and Contests only, `packages/threads`)                       | ✅ Covered | `docs/requirements/thread-system-requirements.md`     |
+| 6   | Global Commenting system (comments/replies, `packages/comments`)                                        | ✅ Covered | `docs/requirements/global-commenting-requirements.md` |
+| 7   | Rich Text Editor (Tiptap v3, JSON output, `packages/text-editor`)                                       | ✅ Covered | `docs/requirements/text-editor-requirements.md`       |
+| 8   | Follow System (follow Users/Teams, follower counts)                                                     | ✅ Covered | `docs/requirements/shared-features.md`                |
+| 9   | Team Public Profile (`/t/{teamSlug}`)                                                                   | ✅ Covered | `docs/requirements/shared-features.md`                |
+| 10  | Static/CMS Pages (Admin Page CRUD — powers Terms & Conditions, Privacy Policy, and future static pages) | ✅ Covered | `docs/requirements/shared-features.md`                |
 
 ## Foundational
 
@@ -41,52 +42,19 @@ Last updated: 2026-07-22
 
 ## Landing Pages (public interface)
 
-> Page-by-page UI/UX logic — separate from the feature-level business logic docs above, but can surface new requirements/schema needs.
+> Page-by-page requirements now live in their own folder: **`docs/requirements/landing-pages/`** — see `docs/requirements/landing-pages/README.md` for the full 22-page index and per-page status/links. Not duplicated here to avoid the two lists drifting out of sync.
 
-| #   | Page                                                                                                             | Status         | Notes                                                                                                                                      |
-| --- | ---------------------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | Landing Page                                                                                                     | ⬜ Not started |                                                                                                                                            |
-| 2   | About Us page                                                                                                    | ⬜ Not started |                                                                                                                                            |
-| 3   | Contact Us page                                                                                                  | ⬜ Not started |                                                                                                                                            |
-| 4   | Sponsors page                                                                                                    | ⬜ Not started | Renamed from "Sponsor Us" — combines the sponsor showcase (past/current, as social proof) with the pitch/inquiry section for new sponsors. |
-| 5   | Events Page                                                                                                      | ⬜ Not started |                                                                                                                                            |
-| 6   | Single Event Details page                                                                                        | ⬜ Not started |                                                                                                                                            |
-| 7   | Contests Page                                                                                                    | ⬜ Not started |                                                                                                                                            |
-| 8   | Single Contest Details page                                                                                      | ⬜ Not started |                                                                                                                                            |
-| 9   | Case Studies Page                                                                                                | ⬜ Not started |                                                                                                                                            |
-| 10  | Single Case Study Details page                                                                                   | ⬜ Not started |                                                                                                                                            |
-| 11  | Mentorship Page                                                                                                  | ⬜ Not started |                                                                                                                                            |
-| 12  | Articles Page                                                                                                    | ⬜ Not started |                                                                                                                                            |
-| 13  | Single Article Details Page                                                                                      | ⬜ Not started |                                                                                                                                            |
-| 14  | Products Listing Page                                                                                            | ⬜ Not started |                                                                                                                                            |
-| 15  | Single Product Page                                                                                              | ⬜ Not started |                                                                                                                                            |
-| 16  | Join Community Page                                                                                              | ⬜ Not started |                                                                                                                                            |
-| 17  | Single Public Profile Page — unified for any user via `/u/{username}` (Admin/Member, Mentor badge shown if held) | ⬜ Not started | Updated model: one profile shape for everyone, no separate "type" per role. Super Admin has no public profile.                             |
-| 17b | Single Team Public Profile Page — `/t/{teamSlug}`                                                                | ⬜ Not started | Separate from user profiles; own slug, own page.                                                                                           |
-| 18  | Register Page (Member)                                                                                           | ⬜ Not started |                                                                                                                                            |
-| 19  | Login Page (Member)                                                                                              | ⬜ Not started |                                                                                                                                            |
-| 20  | Terms & Conditions page                                                                                          | ⬜ Not started |                                                                                                                                            |
-| 21  | Privacy Policy page                                                                                              | ⬜ Not started |                                                                                                                                            |
-| 22  | Global Search Results page                                                                                       | ⬜ Deferred    | Confirmed necessary, but planned for a **future phase**, not this one.                                                                     |
+**21 of 22** pages covered — all active pages done in one pass, based on already-established feature requirements. Global Search remains deferred to a future phase. All inline flags across these pages, including `home.md`'s Stats bar metric set, are now resolved (tracked in `docs/requirements/open-flags-tracker.md`).
 
-**Resolved:**
+**Resolved (applies platform-wide, not just page layout):**
 
 - No Forgot Password page needed — Member auth has no password. Instead, Members can **link multiple OAuth providers** to one account (e.g. registered via Google, later connects LinkedIn too — or vice versa — and can log in with either afterward). Documented in `docs/requirements/roles-and-auth.md`.
 
 ## Member Dashboard Panel (logged-in member)
 
-| #   | Page                                                      | Status         | Notes                                                                                                                                    |
-| --- | --------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Dashboard Page (overview)                                 | ⬜ Not started |                                                                                                                                          |
-| 2   | Profile Settings                                          | ⬜ Not started |                                                                                                                                          |
-| 3   | Payment History                                           | ⬜ Not started |                                                                                                                                          |
-| 4   | Participated/Registered Event History Page                | ⬜ Not started |                                                                                                                                          |
-| 5   | Single Event Registration Details Page                    | ⬜ Not started | Event equivalent of the Contest details page below — confirmed needed.                                                                   |
-| 6   | Participated Contest History Page                         | ⬜ Not started |                                                                                                                                          |
-| 7   | Participated Contest Details Page                         | ⬜ Not started |                                                                                                                                          |
-| 8   | Library Page (Case Studies + Articles written, Bookmarks) | ⬜ Not started | Includes status beyond Draft/Published: **Pending Review**, **Rejected** (since Resources requires Admin review for Member submissions). |
-| 9   | Create/Edit Case Study or Article Page                    | ⬜ Not started |                                                                                                                                          |
-| 10  | Draft Preview Page (private view)                         | ⬜ Not started |                                                                                                                                          |
+> Page-by-page requirements now live in their own folder: **`docs/requirements/member-dashboard/`** — see `docs/requirements/member-dashboard/README.md` for the full 10-page index and per-page status/links. Not duplicated here to avoid the two lists drifting out of sync.
+
+**12 of 12** pages covered (10 originally listed + Mentorship Sessions + Contest Judging, both added after being surfaced as gaps). All three structural gaps flagged during the initial pass are now resolved — see `docs/requirements/member-dashboard/README.md` for detail. A notification system remains an open flag, not built this phase.
 
 **Resolved:**
 
@@ -96,16 +64,33 @@ Last updated: 2026-07-22
 
 ---
 
+## Admin & Super Admin Dashboard
+
+> Page-by-page requirements now live in their own folder: **`docs/requirements/admin-dashboard/`** — see `docs/requirements/admin-dashboard/README.md` for the full 40-page index and per-page status/links. Not duplicated here to avoid the two lists drifting out of sync.
+
+**40 of 40** pages covered. This pass established a few structural conventions worth knowing going forward: **List/Create/Edit/Details(tabs)/Settings(drawer)** as the dominant pattern for Events, Contests, Articles, Case Studies, and Products; a dedicated **Platform Settings** page for genuinely global (not per-record) toggles, kept separate from per-record Settings drawers; and **no standalone Review Queue pages** — every reviewable content type's List page is status-filterable instead, with Approve/Reject/Curated/Featured/Block actions living on that record's Edit page.
+
+---
+
 ## Summary
 
-- **8 of 8** core product features fully covered — Mentorship has 3 open flags (see `mentorship-requirements.md`).
-- **5 of 9** shared/supporting features covered.
+| Area                          | Total | Covered | Remaining                                      |
+| ----------------------------- | ----- | ------- | ---------------------------------------------- |
+| Core Product Features         | 8     | 8       | 0                                              |
+| Shared / Supporting Features  | 10    | 10      | 0                                              |
+| Foundational (Roles & Auth)   | 1     | 1       | 0                                              |
+| Landing Pages                 | 22    | 21      | 1 (Global Search — deferred, not pending work) |
+| Member Dashboard Panel        | 12    | 12      | 0                                              |
+| Admin & Super Admin Dashboard | 40    | 40      | 0                                              |
+
+- **8 of 8** core product features fully covered — all open items resolved, including Mentorship's final 3.
+- **10 of 10** shared/supporting features covered — all complete.
 - **1 of 1** foundational doc covered.
-- **0 of 23** Landing Pages discussed.
-- **0 of 10** Member Dashboard pages discussed.
-- All 8 core product features now have at least a first pass. Remaining ground: the shared infrastructure pieces (Media Library, Thread System, Global Commenting, Rich Text Editor), and the two page-by-page UI/UX discussions (Landing Pages, Member Dashboard).
-- Remaining shared infrastructure: Media Library, Thread System, Global Commenting, Rich Text Editor — all four are dependencies of the remaining core features, so worth resolving before or alongside them.
-- Landing Pages and Member Dashboard Panel haven't been started — likely best tackled after the remaining core features, since page content depends on the underlying feature logic being settled first.
+- **21 of 22** Landing Pages complete (all but the deferred Global Search). Home and About Us were discussed in detail earlier (Testimonials, Home Page Customizer, Stats/Timeline/Values/Team blocks); the remaining 20 pages were drafted in one pass directly from the existing feature requirements docs, with open decisions marked inline as flags rather than blocking progress. Full index: `docs/requirements/landing-pages/README.md`.
+- **12 of 12** Member Dashboard pages complete (10 original + Mentorship Sessions + Contest Judging, both added after being surfaced as gaps) — full index: `docs/requirements/member-dashboard/README.md`. All three structural gaps from the initial pass are now resolved.
+- **🎉 Every planned feature area is now covered.** All 8 core product features, all 21 active Landing Pages, all 12 Member Dashboard pages, all 4 shared infrastructure packages, and all 40 Admin & Super Admin Dashboard pages — full index: `docs/requirements/admin-dashboard/README.md`.
+- The Admin Dashboard pass established a few structural conventions worth knowing: List/Create/Edit/Details(tabs)/Settings(drawer) as the dominant pattern for Events, Contests, Articles, Case Studies, Products; a dedicated Platform Settings page for genuinely global toggles (separate from per-record Settings drawers); and no standalone "Review Queue" pages — status-filterable Lists + actions on the Edit page cover that instead.
+- While drafting Thread System, a real contradiction was found and fixed across `events-requirements.md` and `conventions.md`: both had incorrectly implied Case Studies used Thread System, when `articles-and-case-studies-requirements.md` had already deliberately decided Case Studies use Global Commenting directly. Confirmed scope: **Thread System = Events + Contests only.**
 - **Major restructure (this round)**: Mentor is no longer a standalone role — it's now a "badge" attachable to Admin or Member accounts. Public profiles were also unified into a single model (`/u/{username}`) regardless of role. See `roles-and-auth.md` for full details; `contests-requirements.md`'s participation rule was updated accordingly.
 
 ## Notes for future updates

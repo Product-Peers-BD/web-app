@@ -8,16 +8,17 @@
 
 ## Shared model (both entities)
 
-| Field                | Notes                                                                                                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Title                |                                                                                                                                                                                |
-| Slug                 | Backend-generated (kebab-case) based on title, unique, editable later                                                                                                          |
-| Cover Image / Banner | Via **Media Library** (`packages/media-library`)                                                                                                                               |
-| Content              | Shared rich text editor (`packages/editor`, Tiptap-based), JSON output                                                                                                         |
-| Category             | Same schema as Event Type (name, description, banner, image, is_active, slug) — but **Articles and Case Studies each have their own separate Category list**, not a shared one |
-| Tags                 | Not planned for either, for now                                                                                                                                                |
-| Author               | A Member, or anyone holding the **Mentor badge** (Member or Admin account) — see Authorship below. Admin can also author regardless of holding the badge.                      |
-| Publishing Status    | `Draft` → `Pending Review` → `Published` / `Rejected` — same chain for both                                                                                                    |
+| Field                | Notes                                                                                                                                                                                                                   |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                |                                                                                                                                                                                                                         |
+| Slug                 | Backend-generated (kebab-case) based on title, unique, editable later                                                                                                                                                   |
+| Cover Image / Banner | Via **Media Library** (`packages/media-library`)                                                                                                                                                                        |
+| Content              | Shared rich text editor (`packages/text-editor`, Tiptap-based), JSON output                                                                                                                                             |
+| Excerpt              | Optional textarea, ~200 chars soft-recommended. Powers the OG meta description on share; falls back to auto-truncated plain text from Content if left blank. See `text-editor-requirements.md` § Excerpt/Summary field. |
+| Category             | Same schema as Event Type (name, description, banner, image, is_active, slug) — but **Articles and Case Studies each have their own separate Category list**, not a shared one                                          |
+| Tags                 | Not planned for either, for now                                                                                                                                                                                         |
+| Author               | A Member, or anyone holding the **Mentor badge** (Member or Admin account) — see Authorship below. Admin can also author regardless of holding the badge.                                                               |
+| Publishing Status    | `Draft` → `Pending Review` → `Published` / `Rejected` — same chain for both                                                                                                                                             |
 
 **Co-authorship**: not supported. Exactly one author per Article/Case Study, for now.
 
@@ -36,7 +37,7 @@ A special filter/flag on Articles — not a separate content type, and not appli
 - Checking it marks the article as Curated Content.
 - **Admin can mark or unmark curated status on _any_ article**, regardless of who authored it — this isn't limited to Admin's own submissions. A Mentor-badge author can presumably mark their own article on creation/edit, but only Admin has override authority across all articles.
 - **Article list API** supports a query param to filter curated articles: **`?is_curated=true`** (consistent with existing `is_premium`/`is_active`-style boolean flag naming).
-- **Public display**: on the Landing site's Article list page, curated articles show a **badge/icon** on the article card. Further UI/UX (e.g. a dedicated "Curated Picks" section, manual ordering among curated articles) is deferred to the Landing Pages design discussion.
+- **Public display**: on the Landing site's Article list page, curated articles show a **badge/icon** on the article card. A dedicated **"Curated Picks" carousel** (most-recent-first, top 6) is now specced in `landing-pages/articles-page.md`. **Manual ordering among curated articles remains deferred** — not built this phase.
 
 ---
 
@@ -59,7 +60,7 @@ A special filter/flag on Articles — not a separate content type, and not appli
 - **Bookmarks** — any Member can bookmark a published Article/Case Study.
 - **Like** — single reaction type only (no dislike or other reactions).
 - **Share** — sharing to any external platform; requires proper OG image, title, description, and metadata for clean social-media previews.
-- **Related content** — related Articles/Case Studies are surfaced (algorithm/logic TBD).
+- **Related content** — related Articles/Case Studies are surfaced via a tiered query algorithm (no ML/scoring engine), now fully specced in `landing-pages/single-article-details.md` and `landing-pages/single-case-study-details.md`.
 - **View count** — increments on every visit to the published piece, by guest or authenticated users alike.
 - **Read time** — calculated via a read-time estimation algorithm (Medium-style), shown alongside the content.
 - **Follow the author** — already covered by the **Follow System** in `shared-features.md`; not redefined here.
@@ -88,9 +89,9 @@ Note: **Associated Products** and **Associated Contests** are independent fields
 
 ## Cross-feature dependencies
 
-- **Rich Text Editor** (`packages/editor`) — Content field, both entities.
+- **Rich Text Editor** (`text-editor-requirements.md`, package `packages/text-editor`) — Content field, both entities; also the source of the Excerpt field's fallback logic.
 - **Media Library** (`packages/media-library`) — Cover Image/Banner, both entities.
-- **Global Commenting** (`packages/comments`) — comments on both entities.
+- **Global Commenting** (`global-commenting-requirements.md`, package `packages/comments`) — comments on both entities.
 - **Follow System** (`shared-features.md`) — following an author.
 - **Roles & Auth** (`roles-and-auth.md`) — Mentor badge determines review-bypass eligibility; Admin bypasses regardless of badge.
 - **Products** and **Contests** features — Case Study's Associated Products/Contests fields reference these directly; full integration details TBD when those features (Products still pending) are further specced.
@@ -101,4 +102,4 @@ Note: **Associated Products** and **Associated Contests** are independent fields
 - Co-authorship / multiple authors.
 - Per-edit re-approval for Member-authored content after initial publish (future phase).
 - Rigid structured Problem/Solution/Result template for Case Studies (using free-form for now).
-- Curated Content display/ordering logic (e.g. dedicated "Curated Picks" section, manual ordering) — deferred to the Landing Pages UI/UX discussion.
+- Manual ordering among Curated Content articles (the "Curated Picks" section itself is now specced in `landing-pages/articles-page.md`; only manual reordering is still deferred).

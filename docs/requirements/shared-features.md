@@ -10,13 +10,16 @@
 
 **Sponsor** — a brand/company that can be attached to Events/Contests.
 
-| Field                   | Required | Notes                                                                                                |
-| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| Brand Logo              | Yes      |                                                                                                      |
-| Brand/Company Name      | Yes      |                                                                                                      |
-| Description             | No       | Max 255 chars                                                                                        |
-| Slug                    | auto     | Backend-generated, unique, editable later                                                            |
-| Associated Contact Info | No       | Textarea. Internal use only (Admin-only visibility, not shown publicly) — sponsor's contact details. |
+| Field                   | Required | Notes                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Brand Logo              | Yes      |                                                                                                                                                                                                                                                                                                                                                                                          |
+| Banner                  | No       | Optional banner image                                                                                                                                                                                                                                                                                                                                                                    |
+| Brand/Company Name      | Yes      |                                                                                                                                                                                                                                                                                                                                                                                          |
+| Sponsor Website URL     | No       | Link to the sponsor's own website                                                                                                                                                                                                                                                                                                                                                        |
+| Description             | No       | Max 255 chars                                                                                                                                                                                                                                                                                                                                                                            |
+| Slug                    | auto     | Backend-generated, unique, editable later                                                                                                                                                                                                                                                                                                                                                |
+| Associated Contact Info | No       | Textarea. Internal use only (Admin-only visibility, not shown publicly) — sponsor's contact details.                                                                                                                                                                                                                                                                                     |
+| Featured                | No       | Default `false`. Admin-only toggle, independent of any Event/Contest attachment. Controls two placements: (1) Home page's Sponsors Strip section (see `landing-pages/home.md`), and (2) a pinned/highlighted row at the top of the public Sponsors page (see `landing-pages/static-pages.md`). _(Renamed from "Featured on Homepage" once the field's scope expanded beyond just Home.)_ |
 
 - Created only by Admin, via a dedicated **Sponsors** page in the dashboard.
 
@@ -42,6 +45,36 @@
 ### Public display
 
 - On an Event/Contest's public details page, if Admin has added sponsors, they're shown **grouped by Tier**. Visual layout/UI TBD in the design phase.
+- There's also a dedicated public **Sponsors page** showing the entire master Sponsor list, independent of any Event/Contest attachment — this is how general platform sponsors (e.g. an IT/hosting partner or a community T-shirt sponsor) get shown regardless of whether they're also attached to any specific Event/Contest. Full page spec in `landing-pages/static-pages.md`.
+
+---
+
+## Static / CMS Pages
+
+A generic Admin-managed content-page feature — built once, used for Terms & Conditions and Privacy Policy (see `landing-pages/static-pages.md`), and reusable for any future one-off static page without needing a code deploy.
+
+### Page entity
+
+| Field   | Required | Notes                                                                                                                                                |
+| ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title   | Yes      |                                                                                                                                                      |
+| Slug    | auto     | Backend-generated from Title, unique, editable later — same convention as Events/Articles/etc.                                                       |
+| Content | Yes      | Rich text via `packages/text-editor` (Tiptap, JSON output) — same shared editor used by Articles/Case Studies.                                       |
+| Status  | —        | `Draft` / `Published`, default `Draft`. **No scheduled publishing** for this feature — a page is either live or it isn't, admin toggles it manually. |
+
+- Admin can create, edit, publish/unpublish (back to Draft), and delete Pages from a dedicated dashboard area — simple CRUD, no review workflow (Admin-authored only, no Member submissions).
+- **Routing**: `https://website-url.com/{slug}` — a slug-based catch-all route in `apps/web`, resolved at read time against Published Pages.
+- **Slug collision prevention**: a Page's slug must not collide with any of the app's existing static routes (e.g. `about-us`, `contact-us`, `sponsors`, `events`, `contests`, `case-studies`, `articles`, `mentorship`, `products`, `join`, `register`, `login`, `u`, `t`, and any other top-level route already defined in `apps/web`). Validated on create/edit — Admin sees an error and must pick a different slug if it conflicts.
+
+## Cross-feature dependencies
+
+- **Rich Text Editor** (`packages/text-editor`) — Content field.
+- **Landing Pages — Static Pages** (`landing-pages/static-pages.md`) — Terms & Conditions, Privacy Policy are the first two Pages created via this feature.
+
+## Deferred / explicitly out of scope for this phase
+
+- Scheduled publishing for Pages (Draft/Published only, no `scheduled_publish_at`).
+- Any review/approval workflow (Admin-only feature).
 
 ---
 
@@ -126,3 +159,9 @@ URL: `https://landing-url.com/t/{teamSlug}` — unique, backend-generated slug p
 Only the **current leader** (i.e. most-recently-assigned Team Leader, across any of the team's contests) has edit access at any given time.
 
 _(Note: the per-contest membership snapshot behavior defined in `contests-requirements.md` — team rosters can differ contest-to-contest — still applies to what's shown in the Activities Timeline and in each Contest's own team listing. The roster tab here shows the team's current/global membership, which is a separate concept from any single contest's snapshot.)_
+
+---
+
+## Media Library
+
+Moved to its own file — **`media-library-requirements.md`** — once the technical UI/interaction spec (component props, hooks, keyboard shortcuts, bulk operations, drag-reorder persistence) made it comparable in depth to a core feature rather than a lightweight shared-features entry. Nothing left to document here beyond that pointer.

@@ -27,7 +27,43 @@ Coding conventions — naming, folder structure, import order, code style, datab
 
 ## Requirements & Business Logic
 
-Feature requirements and business logic are defined in `docs/requirements/`. Start with `docs/requirements/progress-report.md` for an index of what's covered and what's still pending before implementing any feature — it links out to the relevant detailed file (e.g. `events-requirements.md`, `contests-requirements.md`, `shared-features.md`, `roles-and-auth.md`).
+Feature requirements and business logic are defined in `docs/requirements/`. Start with `docs/requirements/progress-report.md` — it indexes what's covered/pending and links out to the relevant detailed file.
+
+### Folder structure
+
+```
+docs/requirements/
+├── progress-report.md              — master index, start here
+├── project-summary.md              — stakeholder-facing summary (rarely needed for implementation)
+├── roles-and-auth.md                — foundational: roles, Mentor badge, auth, public profiles
+├── shared-features.md               — Sponsors, Contact Us, Payment, Follow System, Static/CMS Pages
+├── events-requirements.md           — core feature
+├── contests-requirements.md         — core feature
+├── articles-and-case-studies-requirements.md
+├── mentorship-requirements.md       — core feature
+├── products-requirements.md         — core feature
+├── media-library-requirements.md    — shared infrastructure, its own file (not in shared-features.md)
+├── text-editor-requirements.md      — shared infrastructure, its own file (not in shared-features.md)
+├── global-commenting-requirements.md — shared infrastructure, its own file (not in shared-features.md)
+├── thread-system-requirements.md    — shared infrastructure, its own file (not in shared-features.md)
+├── landing-pages/                   — one file per public page (or small grouped pages)
+│   └── README.md                    — index of all 22 pages, status + file per page
+├── member-dashboard/                — one file per logged-in Member page
+│   └── README.md                    — index of all 12 pages, status + file per page
+└── admin-dashboard/                 — 40 pages, fully specced, own README.md index
+    └── README.md
+```
+
+### Read narrowly, not broadly
+
+Each file covers one feature or one page — nothing is duplicated across files, and cross-references (e.g. "see `roles-and-auth.md`") point to a single source of truth rather than repeating it. Before implementing something, identify which specific file(s) cover it and read only those, rather than scanning the whole folder:
+
+- **Implementing a page** → that page's file in `landing-pages/` or `member-dashboard/`, plus the one or two core feature docs it references (each page file lists its "Cross-feature dependencies" at the bottom).
+- **Implementing a feature's backend logic** → that feature's root-level `.md` file only.
+- **Unsure which file covers something** → check `progress-report.md`'s index tables rather than grepping/reading every file.
+- **Request is vague about which feature/page it concerns** → ask for clarification rather than reading broadly to compensate.
+
+This keeps context usage proportional to the task, not the size of the whole docs folder.
 
 ## Architecture
 

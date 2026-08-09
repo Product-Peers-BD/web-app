@@ -13,7 +13,7 @@
     - WebSockets for real-time communication.
     - JWT for authentication.
     - Bkash for payments.
-    - AWS S3 for file storage.
+    - Local disk storage for files (directory on the hosting server/VPS — exact host not yet decided). AWS S3 planned as a future addition, not built now — see `packages/media-library` note below for the pluggable design.
     - Swagger for API documentation.
     - Sentry for error monitoring.
 
@@ -26,10 +26,10 @@ Packages are created per feature/functionality; each has its own `src/` folder w
     - `src/models` — API payload, response, and query-param types.
     - `src/enums` — API-related enums and parameter options.
 - **`packages/utils`** _(planned)_ — common utility functions shared across apps (debounce, throttle, date helpers, etc.).
-- **`packages/media-library`** _(planned)_ — shared file/image upload and picker, backed by S3 with CDN-served URLs. Used wherever any feature needs file/image uploads (Events, Contests, Case Studies, Articles, etc.) — no feature should implement its own upload handling.
-- **`packages/editor`** _(planned)_ — shared Tiptap-based rich text editor component, JSON output. Used for all rich text fields (Event/Contest descriptions, Articles, Case Studies, etc.).
-- **`packages/threads`** _(planned)_ — discussion-thread system (thread creation, approval, pinning, announcements). Used by Events and Contests discussion features, and later Case Studies.
-- **`packages/comments`** _(planned)_ — global commenting/replies system, one level of replies, @mentions, image attachments. Used inside `packages/threads`-powered discussions, and directly on Articles/Case Studies.
+- **`packages/media-library`** _(planned)_ — shared file/image upload and picker. **Storage backend: local disk** (directory on the hosting server/VPS) for this phase, not S3 — built as a pluggable storage-provider interface (same pattern as `packages/payments`), so S3 (and CDN-served URLs) can be added later as a second/replacement provider without reworking calling code. Used wherever any feature needs file/image uploads (Events, Contests, Case Studies, Articles, etc.) — no feature should implement its own upload handling.
+- **`packages/text-editor`** _(planned)_ — shared Tiptap v3-based rich text editor component, JSON output. Used for all rich text fields (Event/Contest descriptions, Articles, Case Studies, Products). Depends on `packages/media-library` for image insertion (base64 explicitly disabled — images must go through Media Library). Full spec: `docs/requirements/text-editor-requirements.md`.
+- **`packages/threads`** _(planned)_ — discussion-thread system (thread creation, approval, pinning, announcements). Used by **Events and Contests only** — Articles, Case Studies, and Products use `packages/comments` directly instead, not Thread System.
+- **`packages/comments`** _(planned)_ — global commenting/replies system, one level of replies (flattened, no deeper nesting), @mentions (no notification yet), Admin-configurable image attachment limit (default 1), lightweight Tiptap formatting (Bold/Italic/Link/Mention/Image only — not the full editor). Used inside `packages/threads`-powered discussions, and directly on Articles/Case Studies/Products. Full spec: `docs/requirements/global-commenting-requirements.md`.
 - **`packages/payments`** _(planned)_ — payment handling, built as a pluggable provider interface. Bkash is the only implemented gateway for now; the interface should allow adding new gateways later without reworking calling code (Event/Contest registration, etc.).
 
 > When any planned package is scaffolded, also add it to the Architecture section of root `CLAUDE.md`.
@@ -148,7 +148,7 @@ These apply project-wide, surfaced while defining feature requirements in `docs/
 - **No background jobs for scheduled visibility.** Prefer computing visibility at read time — e.g. `status == PUBLISHED AND (scheduled_at IS NULL OR scheduled_at <= now())` — over cron/worker jobs, for scheduled publish, registration-open countdowns, and similar timing logic. Only introduce an actual job/worker when a real side effect is required (e.g. sending a notification email at that moment).
 - **Snapshot associations that must preserve history.** When an association can change over time but past state must remain accurate (e.g. which members represented a given team in a specific past contest), model it as a dedicated snapshot/junction record tied to that point in time — not a live foreign key that silently rewrites history when the underlying data changes.
 - **All file/image uploads go through `packages/media-library`.** No feature implements its own one-off upload handling.
-- **All rich text fields use `packages/editor`.** Content is persisted as JSON (Tiptap's format), never raw HTML.
+- **All rich text fields use `packages/text-editor`.** Content is persisted as JSON (Tiptap's format), never raw HTML.
 - **Entity deletion policy is feature-specific — don't assume one universal rule.** For example, Sponsors/Tiers block deletion while in use; Event Category/Tag allow deletion and simply detach from referencing records instead. Check the specific feature's file under `docs/requirements/` before implementing delete behavior for a new entity.
 
 ## Git conventions

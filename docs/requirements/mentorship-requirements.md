@@ -23,7 +23,7 @@ Recommended data shape: a `mentorship_eligible` boolean (or similar) on the ment
 
 - A public **Mentorship page** on the Landing site lists all currently Mentorship-eligible mentors.
 - Any authenticated Member (with or without their own Mentor badge) can book a session with any eligible mentor.
-- _(Flag: no filter/search mechanism specified yet — e.g. filtering the mentor list by Skills, reusing the Skills field from `roles-and-auth.md`. Worth adding for usability once the mentor list grows, or fine to launch with a flat list for phase 1?)_
+- The mentor list supports **filtering and search** (e.g. by Skills, reusing the Skills field from `roles-and-auth.md`).
 
 ---
 
@@ -35,10 +35,10 @@ Collapsed into a single request→decision flow — no separate "apply to be a m
 2. Sees that mentor's available slots (see **Availability** below) and picks one.
 3. Optionally adds a short message (similar to Event Registration Questions).
 4. Submits — booking status: **Requested**.
-5. Mentor **accepts** (providing a meeting link — Google Meet/Zoom URL) or **denies** the request. _(Flag: is a denial reason required, optional, or not needed? Not yet specified — Event's Speaker/mentor deny logic didn't require one either, so leaving optional unless you want it required.)_
+5. Mentor **accepts** (providing a meeting link — Google Meet/Zoom URL) or **denies** the request. A denial reason is **optional**, not required.
 6. If accepted: booking becomes **Upcoming**. If the session is paid (see **Payment**), payment is collected **now**, after acceptance.
 7. Either **Mentor or Mentee can cancel** an Upcoming booking any time before the session start time — no enforced notice period this phase, no separate "reschedule" action (cancelling frees the slot; the mentee just books a new one).
-8. After the session's scheduled time passes, it's marked **Completed** or **No-show**. _(Flag: who sets this — the Mentor manually marking it after the fact, or automatic based on the clock? Recommend **Mentor manually marks it** for phase 1 — no-show detection can't be automated without call-integration data anyway.)_
+8. After the session's scheduled time passes, it's marked **Completed** or **No-show** — **manually set by the Mentor**, confirmed (no automated no-show detection).
 
 ### Booking states
 
@@ -98,4 +98,3 @@ Collapsed into a single request→decision flow — no separate "apply to be a m
 - Variable session durations per slot (one fixed duration per mentor only).
 - Reschedule as a distinct action (cancel + rebook instead).
 - Rating/feedback mechanism post-session.
-- Mentor discovery filters (e.g. by Skills) — flagged above, not yet decided whether needed for phase 1.

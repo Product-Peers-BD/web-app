@@ -101,6 +101,7 @@ Represents **topic** (e.g. AI, Soft Skills), lighter-weight than Type/Category.
 
 - Admin or any authenticated platform user can start a thread (lightweight, "minimalistic Facebook post" style).
 - User-created threads require **admin approval** before appearing.
+- **Per-Event setting**: Admin can independently allow **Mentor-badge holders to publish threads without approval** on this specific Event (default: off — Mentor-badge holders require approval same as plain Members, unless Admin enables this override for the event). Full behavior specced in `thread-system-requirements.md` § Publishing & moderation.
 - Admin-created threads can be marked **Announcement**.
 - Admin can **pin** any thread.
 - Admin can **unapprove** a previously-approved thread, and can **edit or delete** any thread.
@@ -112,8 +113,8 @@ Represents **topic** (e.g. AI, Soft Skills), lighter-weight than Type/Category.
         - Reply One (to Comment Two)
         - Reply Two (to Comment Two)
 - Users can **@mention** other users by username within a comment or reply.
-- A comment or reply can have **up to 3 images** attached; a Discussion thread (the original post) can have **up to 5 images** attached.
-- Discussion threads themselves are powered by a shared **Thread system** package; each thread's comments/replies are powered by the separate **Global Commenting system** package — both are shared Turborepo packages, discussed later.
+- A comment or reply can have an **Admin-configurable number of images** attached (default **1** — see `global-commenting-requirements.md`); a Discussion thread (the original post) can have **up to 5 images** attached (fixed, not configurable).
+- Discussion threads themselves are powered by a shared **Thread system** package (`thread-system-requirements.md`); each thread's comments/replies are powered by the separate **Global Commenting system** package (`global-commenting-requirements.md`) — both shared Turborepo packages.
 
 ### Publishing
 
@@ -186,9 +187,9 @@ Two documented variants for later: (1) waitlist activated once seats fill, admin
 ## Cross-feature dependencies (defined elsewhere, referenced here)
 
 - **Rich text editor** (Tiptap, JSON output) — shared with Articles, Case Studies, Contests.
-- **Media Library** — dedicated feature for uploading/selecting any file type (images, PDFs, etc.) via a shared popup. Files upload to S3 (or equivalent), served via CDN-generated URLs; selecting one or more files returns an array of URLs, stored against whichever feature used it (Events' Image Gallery, Articles, Case Studies, etc.). Admin gets a dedicated dashboard menu to browse the full library; members writing Articles/Case Studies can browse their own uploaded files from the same picker. Planned as its own package in the Turborepo. Full logic TBD in a dedicated discussion.
-- **Global Commenting system** — a shared package (own directory under `packages/` in the Turborepo), used across Articles, Case Studies, and Events' Discussion threads (and anywhere else comments are needed).
-- **Thread system** — a separate shared package (its own `packages/` directory), distinct from Global Commenting. Used specifically by Event Discussion threads and Case Study discussion threads; each thread's comments/replies are then powered by the Global Commenting package.
+- **Media Library** — dedicated feature for uploading/selecting any file type (images, PDFs, etc.) via a shared popup. **Storage backend: local disk this phase** (directory on the hosting server/VPS, not yet decided which host) — served via app-generated URLs; AWS S3 (with CDN-served URLs) is a planned future addition, not built now. Built as a pluggable storage-provider interface so swapping to S3 later doesn't require reworking calling code. Selecting one or more files returns an array of URLs, stored against whichever feature used it (Events' Image Gallery, Articles, Case Studies, etc.). Admin gets a dedicated dashboard menu to browse the full library; members writing Articles/Case Studies can browse their own uploaded files from the same picker. Planned as its own package in the Turborepo. Full logic TBD in a dedicated discussion.
+- **Global Commenting system** (`global-commenting-requirements.md`) — a shared package (own directory under `packages/` in the Turborepo), used across Articles, Case Studies, Products, and Events' Discussion threads (and anywhere else comments are needed).
+- **Thread system** — a separate shared package (its own `packages/` directory), distinct from Global Commenting. Used by **Events and Contests Discussion threads only** — Articles, Case Studies, and Products use Global Commenting directly, not Thread System (see `articles-and-case-studies-requirements.md`, `products-requirements.md`). Each Discussion thread's comments/replies are then powered by the Global Commenting package.
 - **Sponsors** — Tier + Sponsor master lists managed globally by Admin; attached per-Event via Tier→Sponsors association. See `shared-features.md` → Sponsors.
 - **Mentor Session 1:1 booking** — mentor sets availability/duration; can cancel or deny requests. Full logic TBD in the Mentorship feature discussion.
 - **Bkash payment + invoicing** — likely reused by Mentorship (if paid sessions exist there); confirm overlap when discussing Mentorship.

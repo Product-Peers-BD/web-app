@@ -31,7 +31,7 @@ Feature requirements and business logic are defined in `docs/requirements/`. Sta
 
 ### Folder structure
 
-```
+```text
 docs/requirements/
 ├── progress-report.md              — master index, start here
 ├── project-summary.md              — stakeholder-facing summary (rarely needed for implementation)

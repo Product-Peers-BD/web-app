@@ -25,7 +25,7 @@ export function StatsBar() {
 					{heroStats.map((stat) => (
 						<div
 							key={stat.label}
-							className="flex flex-col gap-1 bg-card px-4 py-3 sm:px-6 sm:py-5"
+							className="flex flex-col gap-1 bg-card/95 px-4 py-3 sm:px-6 sm:py-5"
 						>
 							<dt className="font-mono text-[10px] tracking-[0.08em] text-muted-foreground uppercase sm:text-[11px] sm:tracking-[0.12em]">
 								{stat.label}

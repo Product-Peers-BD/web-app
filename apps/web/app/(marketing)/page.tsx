@@ -14,6 +14,7 @@ export default function HomePage() {
 	return (
 		<>
 			<Hero />
+			<SponsorsStrip />
 			<StatsBar />
 			<UpcomingEvents />
 			<MentorshipSpotlight />
@@ -22,7 +23,6 @@ export default function HomePage() {
 			<ProductsSpotlight />
 			<ContestsPreview />
 			<Testimonials />
-			<SponsorsStrip />
 			<JoinCommunityCta />
 		</>
 	);

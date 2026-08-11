@@ -68,6 +68,15 @@ export function MobileNav({ navItems }: MobileNavProps) {
 							<Link href="/join-community">Join Community</Link>
 						</Button>
 					</SheetClose>
+					<SheetClose asChild>
+						<Button
+							asChild
+							variant="outline"
+							size="lg"
+						>
+							<Link href="/sign-in">Sign In</Link>
+						</Button>
+					</SheetClose>
 				</div>
 			</SheetContent>
 		</Sheet>

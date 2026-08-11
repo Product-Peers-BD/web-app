@@ -15,6 +15,7 @@ export interface UpcomingEventCard {
 	startAt: string;
 	registrationOpen: boolean;
 	hasRegistration: boolean;
+	registrationOpensAt?: string;
 }
 
 export interface MentorCard {

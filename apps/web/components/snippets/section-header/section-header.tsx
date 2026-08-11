@@ -1,6 +1,8 @@
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
+import { Reveal } from '@/components/snippets/reveal/reveal';
+
 interface SectionHeaderProps {
 	eyebrow: string;
 	title: string;
@@ -17,7 +19,7 @@ export function SectionHeader({
 	seeAllHref
 }: SectionHeaderProps) {
 	return (
-		<div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+		<Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
 			<div className="max-w-xl">
 				<p className="font-mono text-xs tracking-[0.2em] text-primary uppercase">
 					{eyebrow}
@@ -40,6 +42,6 @@ export function SectionHeader({
 					<ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
 				</Link>
 			) : null}
-		</div>
+		</Reveal>
 	);
 }

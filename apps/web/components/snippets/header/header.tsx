@@ -35,15 +35,23 @@ export function Header() {
 					<Button
 						asChild
 						variant="ghost"
-						className="hidden sm:inline-flex"
+						className="hidden md:inline-flex"
 					>
 						<Link href="/sign-in">Sign In</Link>
 					</Button>
 					<Button
 						asChild
-						className="hidden sm:inline-flex"
+						className="hidden md:inline-flex"
 					>
 						<Link href="/join-community">Join Community</Link>
+					</Button>
+					<Button
+						asChild
+						variant="accent"
+						size="sm"
+						className="md:hidden"
+					>
+						<Link href="/join-community">Join</Link>
 					</Button>
 					<MobileNav navItems={primaryNavItems} />
 				</div>

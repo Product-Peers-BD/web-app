@@ -50,7 +50,8 @@ export const upcomingEvents: UpcomingEventCard[] = [
 		format: EventFormat.ONLINE,
 		startAt: '2026-08-19T13:00:00+06:00',
 		registrationOpen: false,
-		hasRegistration: true
+		hasRegistration: true,
+		registrationOpensAt: '2026-08-16T09:00:00+06:00'
 	},
 	{
 		slug: 'meetup-analytics-for-pms',

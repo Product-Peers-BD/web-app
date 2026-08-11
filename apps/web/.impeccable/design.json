@@ -1,0 +1,242 @@
+{
+	"schemaVersion": 2,
+	"generatedAt": "2026-08-11T01:00:00+06:00",
+	"title": "Design System: Product Peers BD",
+	"extensions": {
+		"colorMeta": {
+			"signal-teal": {
+				"role": "primary",
+				"displayName": "Signal Teal",
+				"canonical": "oklch(58% 0.13 175)",
+				"tonalRamp": [
+					"oklch(15% 0.04 175)",
+					"oklch(27% 0.07 175)",
+					"oklch(39% 0.10 175)",
+					"oklch(50% 0.12 175)",
+					"oklch(58% 0.13 175)",
+					"oklch(68% 0.12 175)",
+					"oklch(80% 0.08 175)",
+					"oklch(93% 0.03 175)"
+				]
+			},
+			"ember-amber": {
+				"role": "secondary",
+				"displayName": "Ember Amber",
+				"canonical": "oklch(78% 0.15 70)",
+				"tonalRamp": [
+					"oklch(15% 0.03 70)",
+					"oklch(27% 0.06 70)",
+					"oklch(40% 0.10 70)",
+					"oklch(55% 0.13 70)",
+					"oklch(70% 0.15 70)",
+					"oklch(78% 0.15 70)",
+					"oklch(88% 0.09 70)",
+					"oklch(96% 0.03 70)"
+				]
+			},
+			"paper": {
+				"role": "neutral",
+				"displayName": "Paper",
+				"canonical": "oklch(97.5% 0.01 175)",
+				"tonalRamp": [
+					"oklch(15% 0.01 175)",
+					"oklch(27% 0.01 175)",
+					"oklch(39% 0.01 175)",
+					"oklch(55% 0.01 175)",
+					"oklch(70% 0.01 175)",
+					"oklch(85% 0.01 175)",
+					"oklch(93% 0.01 175)",
+					"oklch(97.5% 0.01 175)"
+				]
+			},
+			"ink": {
+				"role": "neutral",
+				"displayName": "Ink",
+				"canonical": "oklch(20% 0.02 175)",
+				"tonalRamp": [
+					"oklch(12% 0.02 175)",
+					"oklch(20% 0.02 175)",
+					"oklch(30% 0.02 175)",
+					"oklch(42% 0.02 175)",
+					"oklch(55% 0.02 175)",
+					"oklch(70% 0.02 175)",
+					"oklch(85% 0.01 175)",
+					"oklch(95% 0.01 175)"
+				]
+			},
+			"hairline": {
+				"role": "neutral",
+				"displayName": "Hairline",
+				"canonical": "oklch(91% 0.02 175)",
+				"tonalRamp": [
+					"oklch(20% 0.02 175)",
+					"oklch(35% 0.02 175)",
+					"oklch(50% 0.02 175)",
+					"oklch(65% 0.02 175)",
+					"oklch(78% 0.02 175)",
+					"oklch(91% 0.02 175)",
+					"oklch(96% 0.01 175)",
+					"oklch(99% 0.005 175)"
+				]
+			}
+		},
+		"typographyMeta": {
+			"heading": {
+				"displayName": "Heading — Space Grotesk",
+				"purpose": "Hero headline, section titles, card titles. Geometric, slightly technical."
+			},
+			"body": {
+				"displayName": "Body — Manrope",
+				"purpose": "Narrative copy: descriptions, testimonial quotes, supporting text."
+			},
+			"label": {
+				"displayName": "Label/Mono — IBM Plex Mono",
+				"purpose": "Eyebrows, stat labels, timestamps, nav-adjacent metadata, footer group headers. Always uppercase, wide-tracked — the system's 'live data' signal."
+			}
+		},
+		"shadows": [
+			{
+				"name": "overlay-lg",
+				"value": "shadow-lg (shadcn default)",
+				"purpose": "The only shadow in the system — mobile navigation drawer/sheet overlay. Never used on content surfaces (see The Flat-By-Default Rule)."
+			}
+		],
+		"motion": [
+			{
+				"name": "marquee",
+				"value": "translateX(0) to translateX(-50%), 34s linear infinite",
+				"purpose": "Sponsor logo ticker — infinite horizontal scroll of duplicated content, edge-masked, pauses on hover via motion-safe:group-hover:paused."
+			},
+			{
+				"name": "live-ping",
+				"value": "Tailwind default animate-ping, motion-safe only",
+				"purpose": "Translucent twin behind the solid Live Indicator dot — the recurring 'this is real-time' signal in the hero badge and stats-bar header."
+			},
+			{
+				"name": "ease-standard",
+				"value": "cubic-bezier(0.4, 0, 0.2, 1)",
+				"purpose": "Default Tailwind transition-all easing used for button/link hover and color transitions."
+			},
+			{
+				"name": "ease-power-on",
+				"value": "cubic-bezier(0.16, 1, 0.3, 1)",
+				"purpose": "The system's one entrance-motion easing (Power-On Reveal): opacity + translate-y-3 + blur-[6px] to settled, 500ms, IntersectionObserver-triggered once (or on-mount for the Hero's rehearsed sequence). Content is visible by default so scripting-disabled/reduced-motion visitors never see a stuck-hidden state."
+			}
+		],
+		"breakpoints": [
+			{ "name": "sm", "value": "640px" },
+			{ "name": "md", "value": "768px" },
+			{ "name": "lg", "value": "1024px" }
+		]
+	},
+	"components": [
+		{
+			"name": "Primary Button",
+			"kind": "button",
+			"refersTo": "button-primary",
+			"description": "Default button — Signal Teal fill, white text. The system's baseline action.",
+			"html": "<button class=\"ds-btn-primary\">Explore Events</button>",
+			"css": ".ds-btn-primary { background: #04a18f; color: #ffffff; height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid transparent; font-family: Manrope, ui-sans-serif, system-ui; font-size: 14px; font-weight: 500; transition: background 0.2s cubic-bezier(0.4,0,0.2,1), transform 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: rgba(4,161,143,0.8); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(20,184,166,0.5); } .ds-btn-primary:active { transform: translateY(1px); }"
+		},
+		{
+			"name": "Accent Button",
+			"kind": "button",
+			"refersTo": "button-accent",
+			"description": "Ember Amber fill for the single highest-priority action per section (e.g. 'Join Community').",
+			"html": "<button class=\"ds-btn-accent\">Join Community</button>",
+			"css": ".ds-btn-accent { background: #f2a93b; color: #241505; height: 44px; padding: 0 28px; border-radius: 8px; border: 1px solid transparent; font-family: Manrope, ui-sans-serif, system-ui; font-size: 16px; font-weight: 500; transition: background 0.2s cubic-bezier(0.4,0,0.2,1), transform 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-accent:hover { background: rgba(242,169,59,0.85); } .ds-btn-accent:active { transform: translateY(1px); }"
+		},
+		{
+			"name": "Outline Button",
+			"kind": "button",
+			"refersTo": "button-outline",
+			"description": "Low-emphasis action — Hairline border, transparent fill, fills with Fog on hover.",
+			"html": "<button class=\"ds-btn-outline\">View Details</button>",
+			"css": ".ds-btn-outline { background: transparent; color: #0f1b19; height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid #dceae7; font-family: Manrope, ui-sans-serif, system-ui; font-size: 14px; font-weight: 500; transition: background 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-outline:hover { background: #eff4f3; }"
+		},
+		{
+			"name": "Data Tag Badge",
+			"kind": "chip",
+			"refersTo": "badge-tag",
+			"description": "Compact metadata tag (e.g. event type) — squared corners distinguish it from a full-pill status badge.",
+			"html": "<span class=\"ds-badge-tag\">MENTOR SESSION</span>",
+			"css": ".ds-badge-tag { display: inline-flex; align-items: center; background: transparent; color: #5b6c69; border: 1px solid #dceae7; border-radius: 5px; padding: 2px 8px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }"
+		},
+		{
+			"name": "Content Card",
+			"kind": "card",
+			"refersTo": "card",
+			"description": "Standard event/content card — hairline border, no shadow, compact internal padding around a media placeholder.",
+			"html": "<article class=\"ds-card\"><div class=\"ds-card-media\"></div><span class=\"ds-badge-tag\">PANEL DISCUSSION</span><h3 class=\"ds-card-title\">Roadmapping Under Uncertainty</h3><p class=\"ds-card-meta\">Aug 14 · Hybrid</p></article>",
+			"css": ".ds-card { display: flex; flex-direction: column; background: #ffffff; border: 1px solid #dceae7; border-radius: 11px; padding: 12px; } .ds-card-media { aspect-ratio: 4 / 3; width: 100%; border-radius: 8px; background: linear-gradient(to bottom right, #eaf5f3, #eaf5f3, #eff4f3); } .ds-card-title { margin-top: 10px; font-family: 'Space Grotesk', ui-sans-serif, system-ui; font-size: 18px; font-weight: 600; color: #0f1b19; line-height: 1.3; } .ds-card-meta { margin-top: 8px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #5b6c69; }"
+		},
+		{
+			"name": "Live Indicator",
+			"kind": "custom",
+			"refersTo": null,
+			"description": "Two-layer pulsing dot + mono uppercase label. The system's recurring 'this is real-time' signal.",
+			"html": "<div class=\"ds-live\"><span class=\"ds-live-dot-wrap\"><span class=\"ds-live-ping\"></span><span class=\"ds-live-dot\"></span></span>Live numbers</div>",
+			"css": ".ds-live { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #5b6c69; } .ds-live-dot-wrap { position: relative; display: inline-flex; width: 6px; height: 6px; } .ds-live-ping { position: absolute; inset: 0; border-radius: 9999px; background: rgba(4,161,143,0.7); animation: ds-ping 1.5s cubic-bezier(0,0,0.2,1) infinite; } .ds-live-dot { position: relative; width: 6px; height: 6px; border-radius: 9999px; background: #04a18f; } @keyframes ds-ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }"
+		},
+		{
+			"name": "Sponsor Marquee",
+			"kind": "custom",
+			"refersTo": null,
+			"description": "Infinite edge-masked horizontal scroll of sponsor names, pauses on hover.",
+			"html": "<div class=\"ds-marquee-wrap\"><div class=\"ds-marquee-track\"><span class=\"ds-marquee-item\">Sponsor One</span><span class=\"ds-marquee-item\">Sponsor Two</span><span class=\"ds-marquee-item\">Sponsor Three</span></div></div>",
+			"css": ".ds-marquee-wrap { overflow: hidden; border-top: 1px solid #dceae7; border-bottom: 1px solid #dceae7; padding: 20px 0; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); } .ds-marquee-track { display: flex; width: max-content; animation: ds-marquee 34s linear infinite; } .ds-marquee-wrap:hover .ds-marquee-track { animation-play-state: paused; } .ds-marquee-item { padding: 0 32px; font-family: 'Space Grotesk', ui-sans-serif, system-ui; font-size: 18px; font-weight: 600; white-space: nowrap; color: #5b6c69; } @keyframes ds-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }"
+		}
+	],
+	"narrative": {
+		"northStar": "Command Deck",
+		"overview": "PPBD's website reads like the front console of a community that is actually running: mono-uppercase labels, a pulsing live-status dot next to tabular stats, a faint dot-grid texture behind the hero, and a marquee ticker of sponsor names — all signals borrowed from operational instrumentation rather than brochure marketing. The mood is precise and operational: confident, data-forward, engineering-flavored. Warmth is deliberately narrow — it comes only from Ember Amber accents and softened corners, never from decorative styling, gradients-as-decoration, or soft illustration.\n\nThe system is flat by construction. There are no drop shadows on any content surface — depth is built entirely from hairline borders, tonal card fills, and occasional blurred glow orbs anchoring hero/CTA sections. This is a deliberate invariant, not an unfinished state.\n\nTwo structural sections — the final Join Community CTA and the site footer — are hardcoded to a fixed deep-teal-ink surface regardless of light/dark theme. They act as dark anchors bracketing the page, always-dark on purpose.",
+		"keyCharacteristics": [
+			"Mono-uppercase eyebrow labels and tabular-numeric stats, used the way a terminal readout is used.",
+			"A live pulse-dot (ping animation + solid dot) as the recurring 'this is real and current' signal.",
+			"Flat surfaces: hairline borders + tonal fills, zero drop shadows on content.",
+			"Two fixed dark-teal-ink sections (CTA, footer) that don't follow the light/dark theme toggle.",
+			"Signal Teal as the sole primary action/brand color; Ember Amber reserved for the one emphasized action per section."
+		],
+		"rules": [
+			{
+				"name": "The One Accent Rule",
+				"body": "Ember Amber appears at most once per section — one CTA button, one rating row, one underline bar. If teal is already carrying the primary action, amber does not also appear as decoration in the same viewport.",
+				"section": "colors"
+			},
+			{
+				"name": "The Dark Anchor Rule",
+				"body": "The final CTA and the footer are always rendered in the fixed Ink surface, independent of the light/dark theme toggle. They are structural bookends, not theme-reactive content.",
+				"section": "colors"
+			},
+			{
+				"name": "The Mono-Metadata Rule",
+				"body": "Anything that is a label, timestamp, count, or status — never narrative prose — is set in IBM Plex Mono, uppercase, wide-tracked. This is the system's primary way of signaling 'this is live/factual data,' independent of color.",
+				"section": "typography"
+			},
+			{
+				"name": "The Flat-By-Default Rule",
+				"body": "Cards, buttons, and content blocks never use box-shadow. If a surface needs to feel 'raised,' reach for a border and a tonal background shift first. Reserve shadow for transient overlays (drawers, popovers, dropdowns).",
+				"section": "elevation"
+			},
+			{
+				"name": "The One Entrance Rule",
+				"body": "Every scroll/mount reveal on the site uses the Power-On Reveal (opacity + rise + blur, ease-power-on). Don't introduce a second fade/slide/zoom entrance pattern — vary only how it's composed (single block, staggered list, or the CTA's accent-bar draw-in), never the underlying motion material.",
+				"section": "components"
+			}
+		],
+		"dos": [
+			"Do set every label, stat, timestamp, and eyebrow in mono, uppercase, wide-tracked — this is the system's primary 'live data' signal.",
+			"Do build depth with borders and tonal fills, never box-shadow, on any content surface.",
+			"Do keep Ember Amber to one use per section; let Signal Teal carry everything else.",
+			"Do reuse the Live Indicator dot pattern for anything claiming to be current/real-time — don't invent a second version.",
+			"Do keep the CTA and footer sections on the fixed dark Ink surface regardless of theme.",
+			"Do reuse the Power-On Reveal for any new entrance motion — don't invent a second fade/slide pattern."
+		],
+		"donts": [
+			"Don't add drop shadows to cards, buttons, or content blocks — reserve shadow-lg for overlays (drawers, popovers, sheets) only.",
+			"Don't use Ember Amber as a large background fill or apply it more than once per section.",
+			"Don't let narrative body copy slip into mono/uppercase — that treatment is reserved for labels/metadata only.",
+			"Don't ship a hard-edged, unmasked grid or texture pattern — the dot-grid always fades via mask, never sits at full, even opacity across a section."
+		]
+	}
+}

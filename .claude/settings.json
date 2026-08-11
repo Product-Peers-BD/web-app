@@ -1,6 +1,10 @@
 {
 	"permissions": {
-		"allow": [],
+		"allow": [
+			"Bash(timeout 25 pnpm dlx shadcn@latest add badge -c apps/web --yes)",
+			"Bash(timeout 40 pnpm dlx shadcn@latest add avatar separator sheet carousel aspect-ratio -c apps/web --yes)",
+			"Bash(timeout 5 pnpm dlx shadcn@latest add --help)"
+		],
 		"deny": []
 	}
 }

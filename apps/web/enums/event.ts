@@ -10,3 +10,23 @@ export enum EventFormat {
 	PHYSICAL = 'PHYSICAL',
 	HYBRID = 'HYBRID'
 }
+
+export enum EventStatus {
+	ONGOING = 'ONGOING',
+	UPCOMING = 'UPCOMING',
+	PAST = 'PAST'
+}
+
+export enum SpeakerRole {
+	SPEAKER = 'SPEAKER',
+	HOST = 'HOST',
+	MENTOR = 'MENTOR',
+	PANELIST = 'PANELIST'
+}
+
+export enum SponsorTierName {
+	TITLE = 'TITLE',
+	GOLD = 'GOLD',
+	SILVER = 'SILVER',
+	COMMUNITY = 'COMMUNITY'
+}

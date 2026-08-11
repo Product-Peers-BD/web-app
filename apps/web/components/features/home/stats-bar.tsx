@@ -8,7 +8,7 @@ export function StatsBar() {
 			<Reveal className="relative overflow-hidden rounded-2xl border border-border bg-card">
 				<div
 					aria-hidden
-					className="pointer-events-none absolute inset-0 [background-image:radial-gradient(var(--border)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_80%_100%_at_100%_0%,black_0%,transparent_70%)] [background-size:20px_20px]"
+					className="pointer-events-none absolute inset-0 bg-[radial-gradient(var(--border)_1px,transparent_1px)] mask-[radial-gradient(ellipse_80%_100%_at_100%_0%,black_0%,transparent_70%)] bg-size-[20px_20px]"
 				/>
 
 				<div className="relative flex items-center gap-2 border-b border-border px-6 py-3.5">

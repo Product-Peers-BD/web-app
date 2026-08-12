@@ -1,3 +1,4 @@
+import { ContestStatus, WinnerTier } from '@/enums/contest';
 import {
 	EventFormat,
 	EventStatus,
@@ -38,6 +39,17 @@ export const sponsorTierLabels: Record<SponsorTierName, string> = {
 	[SponsorTierName.GOLD]: 'Gold',
 	[SponsorTierName.SILVER]: 'Silver',
 	[SponsorTierName.COMMUNITY]: 'Community Partner'
+};
+
+export const contestStatusLabels: Record<ContestStatus, string> = {
+	[ContestStatus.RUNNING]: 'Running',
+	[ContestStatus.UPCOMING]: 'Upcoming',
+	[ContestStatus.PAST]: 'Past'
+};
+
+export const winnerTierLabels: Record<WinnerTier, string> = {
+	[WinnerTier.CHAMPION]: 'Champion',
+	[WinnerTier.RUNNER_UP]: 'Runner-up'
 };
 
 export const productStageLabels: Record<ProductStage, string> = {

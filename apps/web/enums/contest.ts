@@ -7,3 +7,9 @@ export enum ContestPreviewMode {
 	UPCOMING = 'UPCOMING',
 	WINNERS = 'WINNERS'
 }
+
+export enum ContestStatus {
+	RUNNING = 'RUNNING',
+	UPCOMING = 'UPCOMING',
+	PAST = 'PAST'
+}

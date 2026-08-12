@@ -56,5 +56,7 @@ export const productStageLabels: Record<ProductStage, string> = {
 	[ProductStage.IDEA]: 'Idea',
 	[ProductStage.MVP]: 'MVP',
 	[ProductStage.BETA]: 'Beta',
-	[ProductStage.LIVE]: 'Live'
+	[ProductStage.LIVE]: 'Live',
+	[ProductStage.PAUSED]: 'Paused',
+	[ProductStage.SUNSET]: 'Sunset'
 };

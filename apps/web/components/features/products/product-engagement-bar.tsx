@@ -1,12 +1,17 @@
 'use client';
 
-import { Check, Link2 } from 'lucide-react';
+import { Check, Eye, Heart, Link2, MessageCircle } from 'lucide-react';
 import { useState, useSyncExternalStore } from 'react';
 
+import { formatCompactCount } from '@/utils/format-product-date';
 import { Button } from '@workspace/ui/components/button';
+import { cn } from '@workspace/ui/lib/utils';
 
-interface ContestShareProps {
+interface ProductEngagementBarProps {
 	title: string;
+	likeCount: number;
+	commentCount: number;
+	viewCount: number;
 }
 
 function FacebookIcon() {
@@ -35,7 +40,13 @@ function LinkedinIcon() {
 	);
 }
 
-export function ContestShare({ title }: ContestShareProps) {
+export function ProductEngagementBar({
+	title,
+	likeCount,
+	commentCount,
+	viewCount
+}: ProductEngagementBarProps) {
+	const [isLiked, setIsLiked] = useState(false);
 	const [copied, setCopied] = useState(false);
 
 	// Avoid useEffect + setState cascading renders by using useSyncExternalStore
@@ -53,11 +64,41 @@ export function ContestShare({ title }: ContestShareProps) {
 	}
 
 	return (
-		<div className="flex items-center gap-4 border-t border-border pt-8">
-			<p className="font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
-				Share
-			</p>
+		<div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
 			<div className="flex items-center gap-2">
+				<Button
+					variant="outline"
+					size="sm"
+					onClick={() => setIsLiked((value) => !value)}
+					aria-pressed={isLiked}
+				>
+					<Heart
+						className={cn(
+							'size-3.5',
+							isLiked && 'fill-destructive text-destructive'
+						)}
+					/>
+					{likeCount + (isLiked ? 1 : 0)}
+				</Button>
+
+				<a
+					href="#comments"
+					className="inline-flex h-7 items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 text-[0.8rem] font-medium text-foreground hover:bg-muted"
+				>
+					<MessageCircle className="size-3.5" />
+					{commentCount}
+				</a>
+
+				<span className="inline-flex h-7 items-center gap-1.5 px-1 font-mono text-xs text-muted-foreground">
+					<Eye className="size-3.5" />
+					{formatCompactCount(viewCount)} views
+				</span>
+			</div>
+
+			<div className="flex items-center gap-2">
+				<p className="font-mono text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
+					Share
+				</p>
 				<Button
 					asChild
 					variant="outline"

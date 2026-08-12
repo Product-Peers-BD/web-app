@@ -1,7 +1,7 @@
 'use client';
 
 import { Check, Eye, Heart, Link2, MessageCircle } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 
 import { formatCompactCount } from '@/utils/format-product-date';
 import { Button } from '@workspace/ui/components/button';
@@ -49,12 +49,16 @@ export function ProductEngagementBar({
 	const [isLiked, setIsLiked] = useState(false);
 	const [copied, setCopied] = useState(false);
 
-	function getShareUrl() {
-		return typeof window !== 'undefined' ? window.location.href : '';
-	}
+	// Avoid useEffect + setState cascading renders by using useSyncExternalStore
+	// which safely reads from the browser's window object and handles hydration mismatches automatically.
+	const shareUrl = useSyncExternalStore(
+		() => () => {},
+		() => window.location.href,
+		() => ''
+	);
 
 	async function handleCopy() {
-		await navigator.clipboard.writeText(getShareUrl());
+		await navigator.clipboard.writeText(shareUrl);
 		setCopied(true);
 		setTimeout(() => setCopied(false), 2000);
 	}
@@ -101,7 +105,7 @@ export function ProductEngagementBar({
 					size="icon-sm"
 				>
 					<a
-						href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(getShareUrl())}`}
+						href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={`Share ${title} on Facebook`}
@@ -115,7 +119,7 @@ export function ProductEngagementBar({
 					size="icon-sm"
 				>
 					<a
-						href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(getShareUrl())}`}
+						href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label={`Share ${title} on LinkedIn`}

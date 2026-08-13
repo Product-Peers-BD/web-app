@@ -212,6 +212,18 @@ export const testimonials: TestimonialItem[] = [
 		authorRole: 'Founder, Routely',
 		quote: 'Listed our product on a Wednesday, had two pilot customers reach out by Friday.',
 		rating: 4
+	},
+	{
+		authorName: 'Nusrat Jahan',
+		authorRole: 'Senior PM, Fintech',
+		quote: 'The mentor session I booked here changed how I run discovery. Ten minutes in, I had three assumptions I needed to go test.',
+		rating: 5
+	},
+	{
+		authorName: 'Zahid Nirom',
+		authorRole: 'Founder, Miraslab',
+		quote: 'Listed our product on a Wednesday, had two pilot customers reach out by Friday.',
+		rating: 5
 	}
 ];
 

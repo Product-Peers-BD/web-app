@@ -188,6 +188,135 @@ export const profiles: PublicProfile[] = [
 				description: 'Reached 1,000 followers'
 			}
 		]
+	},
+	{
+		username: 'tanvir-ahmed',
+		name: 'Tanvir Ahmed',
+		title: 'Product Lead',
+		company: 'Sheba Platform',
+		city: 'Dhaka',
+		country: 'Bangladesh',
+		bio: "I started Product Peers BD in 2025 because I was tired of joining calls with PMs in Bangalore or Jakarta and hearing advice that assumed a payment stack, a logistics network, or a user base we don't have here. Now I run product at Sheba Platform by day, and spend most nights reading the case studies members post — still the best part of my week.",
+		skills: [
+			'Product Strategy',
+			'Marketplace Growth',
+			'0-to-1',
+			'Community Building',
+			'Fintech'
+		],
+		experience: [
+			{
+				company: 'Sheba Platform',
+				title: 'Product Lead',
+				duration: 'May 2023 — Present',
+				description:
+					'Own the supply-side product for on-demand home services across six cities.'
+			},
+			{
+				company: 'Pathao',
+				title: 'Senior Product Manager',
+				duration: 'Jan 2020 — Apr 2023',
+				description:
+					'Shipped the merchant onboarding flow for Pathao Food.'
+			}
+		],
+		socialLinks: {
+			linkedin: 'https://linkedin.com/in/tanvir-ahmed',
+			twitter: 'https://twitter.com/tanvirahmed'
+		},
+		followerCount: 2140,
+		isMentor: true,
+		mentorCredentials: {
+			sessionsDelivered: 58,
+			eventsSpoken: 4,
+			contestsJudged: 3
+		},
+		joinedAt: '2025-10-12T10:00:00+06:00',
+		activities: [
+			{
+				id: 'tanvir-founded',
+				type: ActivityType.JOINED_PLATFORM,
+				occurredAt: '2025-10-12T10:00:00+06:00',
+				description: 'Founded Product Peers BD'
+			},
+			{
+				id: 'tanvir-article',
+				type: ActivityType.PUBLISHED_ARTICLE,
+				occurredAt: '2026-07-15T09:00:00+06:00',
+				description: "Published 'Writing PRDs People Actually Read'",
+				href: '/articles/writing-prds-people-actually-read'
+			},
+			{
+				id: 'tanvir-judged',
+				type: ActivityType.JUDGED_CONTEST,
+				occurredAt: '2026-07-30T18:00:00+06:00',
+				description: 'Judged Case Study Slam, Vol. 3',
+				href: '/contests/case-study-slam-vol-3'
+			}
+		]
+	},
+	{
+		username: 'iftekhar-alam',
+		name: 'Iftekhar Alam',
+		title: 'Senior Product Designer',
+		company: 'Bkash',
+		city: 'Dhaka',
+		country: 'Bangladesh',
+		bio: "I co-founded Product Peers BD to fix a specific problem: there was nowhere in Bangladesh to ask a senior PM or designer a dumb question without it living on your LinkedIn feed forever. I built the mentor-matching flow myself, badge and all, and I still review every mentor application before it's approved.",
+		skills: [
+			'Product Design',
+			'Design Systems',
+			'Mentorship',
+			'User Research',
+			'Figma'
+		],
+		experience: [
+			{
+				company: 'Bkash',
+				title: 'Senior Product Designer',
+				duration: 'Mar 2022 — Present',
+				description:
+					'Lead design for the merchant payments and QR checkout experience.'
+			},
+			{
+				company: 'Grameenphone',
+				title: 'Product Designer',
+				duration: 'Jun 2019 — Feb 2022',
+				description: 'Designed the MyGP self-care app redesign.'
+			}
+		],
+		socialLinks: {
+			linkedin: 'https://linkedin.com/in/iftekhar-alam',
+			website: 'https://iftekharalam.design'
+		},
+		followerCount: 1870,
+		isMentor: true,
+		mentorCredentials: {
+			sessionsDelivered: 71,
+			eventsSpoken: 6,
+			contestsJudged: 5
+		},
+		joinedAt: '2025-10-12T10:00:00+06:00',
+		activities: [
+			{
+				id: 'iftekhar-joined',
+				type: ActivityType.JOINED_PLATFORM,
+				occurredAt: '2025-10-12T10:00:00+06:00',
+				description: 'Joined Product Peers BD as a co-founder'
+			},
+			{
+				id: 'iftekhar-became-mentor',
+				type: ActivityType.BECAME_MENTOR,
+				occurredAt: '2025-11-01T10:00:00+06:00',
+				description: 'Became a Product Peers BD Mentor'
+			},
+			{
+				id: 'iftekhar-milestone',
+				type: ActivityType.FOLLOWER_MILESTONE,
+				occurredAt: '2026-08-01T09:00:00+06:00',
+				description: 'Reached 1,500 followers'
+			}
+		]
 	}
 ];
 

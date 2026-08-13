@@ -154,6 +154,12 @@ export const spotlightProducts: ProductCard[] = [
 		name: 'Routely',
 		industry: 'Logistics',
 		stage: ProductStage.LIVE
+	},
+	{
+		slug: 'digonto',
+		name: 'Digonto',
+		industry: 'FinTech',
+		stage: ProductStage.IDEA
 	}
 ];
 

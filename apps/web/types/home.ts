@@ -39,6 +39,7 @@ export interface ArticleCard {
 	category: string;
 	authorName: string;
 	readTimeMinutes: number;
+	isCurated: boolean;
 }
 
 export interface ProductCard {
@@ -69,6 +70,8 @@ export interface SponsorItem {
 	name: string;
 	slug: string;
 	logoUrl?: string;
+	logoWidth?: number;
+	logoHeight?: number;
 	websiteUrl?: string;
 	description?: string;
 	featured?: boolean;

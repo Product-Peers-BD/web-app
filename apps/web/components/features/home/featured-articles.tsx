@@ -2,6 +2,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 import { EmptyState } from '@/components/snippets/empty-state/empty-state';
+import { MediaPlaceholder } from '@/components/snippets/media-placeholder/media-placeholder';
 import { Reveal } from '@/components/snippets/reveal/reveal';
 import { SectionHeader } from '@/components/snippets/section-header/section-header';
 import { featuredArticles } from '@/constants/home';
@@ -35,17 +36,21 @@ export function FeaturedArticles() {
 							>
 								<Link
 									href={`/articles/${article.slug}`}
-									className="group flex items-center justify-between gap-4 p-5 transition-colors hover:bg-card/60 sm:p-6"
+									className="group flex items-center gap-4 p-5 transition-colors hover:bg-card/60 sm:p-6"
 								>
-									<div className="min-w-0">
+									<MediaPlaceholder className="size-16 shrink-0 sm:size-20" />
+
+									<div className="min-w-0 flex-1">
 										<div className="flex items-center gap-2">
 											<p className="font-mono text-[11px] tracking-wide text-primary uppercase">
 												{article.category}
 											</p>
-											<Badge className="gap-1 rounded-sm bg-accent font-mono text-[9px] text-accent-foreground uppercase">
-												<Sparkles className="size-2.5" />
-												Curated
-											</Badge>
+											{article.isCurated ? (
+												<Badge className="gap-1 rounded-sm bg-accent font-mono text-[9px] text-accent-foreground uppercase">
+													<Sparkles className="size-2.5" />
+													Curated
+												</Badge>
+											) : null}
 										</div>
 										<h3 className="mt-1.5 truncate font-heading text-lg leading-snug font-semibold text-foreground group-hover:text-primary">
 											{article.title}

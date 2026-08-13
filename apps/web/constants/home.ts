@@ -21,7 +21,8 @@ export const heroStats: StatItem[] = [
 	{ label: 'Articles published', value: '128' },
 	{ label: 'Case studies', value: '36' },
 	{ label: '1:1 sessions', value: '212' },
-	{ label: 'Products listed', value: '58' }
+	{ label: 'Products listed', value: '58' },
+	{ label: 'Sponsors onboarded', value: '15' }
 ];
 
 export const upcomingEvents: UpcomingEventCard[] = [
@@ -115,21 +116,24 @@ export const featuredArticles: ArticleCard[] = [
 		title: 'Writing PRDs People Actually Read',
 		category: 'Product Management',
 		authorName: 'Tanvir Ahmed',
-		readTimeMinutes: 6
+		readTimeMinutes: 6,
+		isCurated: false
 	},
 	{
 		slug: 'a-pricing-playbook-for-bangladeshi-saas',
 		title: 'A Pricing Playbook for Bangladeshi SaaS',
 		category: 'Growth',
 		authorName: 'Nusrat Jahan',
-		readTimeMinutes: 9
+		readTimeMinutes: 9,
+		isCurated: true
 	},
 	{
 		slug: 'the-analyst-to-pm-transition',
 		title: 'The Analyst-to-PM Transition, Honestly',
 		category: 'Careers',
 		authorName: 'Rifat Hasan',
-		readTimeMinutes: 5
+		readTimeMinutes: 5,
+		isCurated: false
 	}
 ];
 
@@ -151,10 +155,29 @@ export const spotlightProducts: ProductCard[] = [
 		name: 'Routely',
 		industry: 'Logistics',
 		stage: ProductStage.LIVE
+	},
+	{
+		slug: 'digonto',
+		name: 'Digonto',
+		industry: 'FinTech',
+		stage: ProductStage.IDEA
 	}
 ];
 
 export const contestPreview: ContestCard[] = [
+	{
+		slug: 'roadmap-rumble',
+		title: 'Roadmap Rumble',
+		mode: ContestPreviewMode.ONGOING,
+		dateLabel: 'Submissions close Aug 18'
+	},
+	{
+		slug: 'growth-metrics-hackathon',
+		title: 'Growth Metrics Hackathon',
+		mode: ContestPreviewMode.UPCOMING,
+		dateLabel: 'Registrations close Sep 12',
+		format: EventFormat.ONLINE
+	},
 	{
 		slug: 'product-sprint-2026',
 		title: 'Product Sprint 2026',
@@ -190,6 +213,18 @@ export const testimonials: TestimonialItem[] = [
 		authorRole: 'Founder, Routely',
 		quote: 'Listed our product on a Wednesday, had two pilot customers reach out by Friday.',
 		rating: 4
+	},
+	{
+		authorName: 'Nusrat Jahan',
+		authorRole: 'Senior PM, Fintech',
+		quote: 'The mentor session I booked here changed how I run discovery. Ten minutes in, I had three assumptions I needed to go test.',
+		rating: 5
+	},
+	{
+		authorName: 'Zahid Nirom',
+		authorRole: 'Founder, Miraslab',
+		quote: 'Listed our product on a Wednesday, had two pilot customers reach out by Friday.',
+		rating: 5
 	}
 ];
 
@@ -198,6 +233,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'bKash',
 		slug: 'bkash',
+		logoUrl: '/logos/sponsors/bkash.png',
+		logoWidth: 207,
+		logoHeight: 92,
 		websiteUrl: 'https://www.bkash.com',
 		description: "Bangladesh's largest mobile financial services provider.",
 		featured: true
@@ -205,6 +243,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Chaldal',
 		slug: 'chaldal',
+		logoUrl: '/logos/sponsors/chaldal.png',
+		logoWidth: 320,
+		logoHeight: 92,
 		websiteUrl: 'https://chaldal.com',
 		description: 'On-demand grocery delivery across Dhaka and beyond.',
 		featured: true
@@ -212,6 +253,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Pathao',
 		slug: 'pathao',
+		logoUrl: '/logos/sponsors/pathao.png',
+		logoWidth: 262,
+		logoHeight: 92,
 		websiteUrl: 'https://pathao.com',
 		description: 'Ride-hailing, delivery, and logistics super-app.',
 		featured: true
@@ -219,6 +263,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Sheba.xyz',
 		slug: 'sheba-xyz',
+		logoUrl: '/logos/sponsors/sheba-xyz.png',
+		logoWidth: 329,
+		logoHeight: 92,
 		websiteUrl: 'https://sheba.xyz',
 		description: 'On-demand home and professional services marketplace.',
 		featured: true
@@ -226,6 +273,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Bondstein',
 		slug: 'bondstein',
+		logoUrl: '/logos/sponsors/bondstein.png',
+		logoWidth: 437,
+		logoHeight: 92,
 		websiteUrl: 'https://bondstein.com',
 		description: 'Product engineering studio building for global clients.',
 		featured: true
@@ -233,6 +283,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Bohubrihi',
 		slug: 'bohubrihi',
+		logoUrl: '/logos/sponsors/bohubrihi.png',
+		logoWidth: 272,
+		logoHeight: 92,
 		websiteUrl: 'https://bohubrihi.com',
 		description:
 			'Skills-based learning platform for working professionals.',

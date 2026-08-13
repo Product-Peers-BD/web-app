@@ -67,7 +67,7 @@ export function UpcomingEvents() {
 											? 'default'
 											: 'outline'
 									}
-									className="mt-auto w-fit pt-4"
+									className="mt-auto w-fit"
 								>
 									<Link
 										href={`/events/${featuredEvent.slug}`}
@@ -104,9 +104,11 @@ export function UpcomingEvents() {
 								>
 									<Link
 										href={`/events/${event.slug}`}
-										className="group flex h-full items-center justify-between gap-4 p-4 transition-colors hover:bg-secondary/50 sm:p-5"
+										className="group flex h-full items-center gap-4 p-4 transition-colors hover:bg-secondary/50 sm:p-5"
 									>
-										<div className="min-w-0">
+										<MediaPlaceholder className="size-16 shrink-0 sm:size-20" />
+
+										<div className="min-w-0 flex-1">
 											<p className="font-mono text-[10px] tracking-wide text-muted-foreground uppercase">
 												{
 													eventTypeLabels[

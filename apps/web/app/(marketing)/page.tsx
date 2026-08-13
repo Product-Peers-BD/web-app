@@ -8,7 +8,8 @@ import { ProductsSpotlight } from '@/components/features/home/products-spotlight
 import { SponsorsStrip } from '@/components/features/home/sponsors-strip';
 // import { StatsBar } from '@/components/features/home/stats-bar';
 // import { StatsBarVariantA } from '@/components/features/home/stats-bar-variant-a';
-import { StatsBarVariantB } from '@/components/features/home/stats-bar-variant-b';
+// import { StatsBarVariantB } from '@/components/features/home/stats-bar-variant-b';
+import { StatsBarVariantC } from '@/components/features/home/stats-bar-variant-c';
 import { Testimonials } from '@/components/features/home/testimonials';
 import { UpcomingEvents } from '@/components/features/home/upcoming-events';
 
@@ -20,7 +21,8 @@ export default function HomePage() {
 			{/* TODO: need to check this one */}
 			{/* <StatsBar /> */}
 			{/* <StatsBarVariantA /> */}
-			<StatsBarVariantB />
+			{/* <StatsBarVariantB /> */}
+			<StatsBarVariantC />
 			<UpcomingEvents />
 			<MentorshipSpotlight />
 			<CaseStudiesSpotlight />

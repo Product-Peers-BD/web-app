@@ -5,6 +5,7 @@ export enum WinnerTier {
 
 export enum ContestPreviewMode {
 	UPCOMING = 'UPCOMING',
+	ONGOING = 'ONGOING',
 	WINNERS = 'WINNERS'
 }
 

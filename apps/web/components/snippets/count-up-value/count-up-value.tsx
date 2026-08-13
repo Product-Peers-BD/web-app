@@ -61,6 +61,7 @@ export function CountUpValue({ value, className }: CountUpValueProps) {
 		<span
 			ref={ref}
 			className={className}
+			style={{ display: 'inline-block', minWidth: `${value.length}ch` }}
 		>
 			{display}
 		</span>

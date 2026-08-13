@@ -1,12 +1,13 @@
 import { Trophy } from 'lucide-react';
 import Link from 'next/link';
 
+import { ContestStatusBadge } from '@/components/features/contests/contest-status-badge';
 import { EmptyState } from '@/components/snippets/empty-state/empty-state';
 import { MediaPlaceholder } from '@/components/snippets/media-placeholder/media-placeholder';
 import { Reveal } from '@/components/snippets/reveal/reveal';
 import { SectionHeader } from '@/components/snippets/section-header/section-header';
 import { contestPreview } from '@/constants/home';
-import { ContestPreviewMode } from '@/enums/contest';
+import { ContestPreviewMode, ContestStatus } from '@/enums/contest';
 import { getInitials } from '@/utils/get-initials';
 import { eventFormatLabels } from '@/utils/labels';
 import { Avatar, AvatarFallback } from '@workspace/ui/components/avatar';
@@ -49,6 +50,11 @@ export function ContestsPreview() {
 												<Trophy className="size-3" />
 												{contest.winnerTier}
 											</Badge>
+										) : contest.mode ===
+										  ContestPreviewMode.ONGOING ? (
+											<ContestStatusBadge
+												status={ContestStatus.RUNNING}
+											/>
 										) : (
 											<Badge
 												variant="outline"
@@ -91,7 +97,7 @@ export function ContestsPreview() {
 											asChild
 											variant="outline"
 											size="sm"
-											className="mt-auto w-fit pt-4"
+											className="mt-auto w-fit"
 										>
 											<Link
 												href={`/contests/${contest.slug}`}

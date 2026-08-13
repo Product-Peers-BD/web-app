@@ -36,7 +36,13 @@ export function Testimonials() {
 					delay={80}
 					className="mt-10"
 				>
-					<Carousel opts={{ align: 'start', loop: true }}>
+					<Carousel
+						opts={{
+							align: 'start',
+							loop: true,
+							slidesToScroll: 1
+						}}
+					>
 						<CarouselContent>
 							{testimonials.map((testimonial) => (
 								<CarouselItem

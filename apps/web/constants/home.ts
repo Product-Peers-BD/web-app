@@ -115,21 +115,24 @@ export const featuredArticles: ArticleCard[] = [
 		title: 'Writing PRDs People Actually Read',
 		category: 'Product Management',
 		authorName: 'Tanvir Ahmed',
-		readTimeMinutes: 6
+		readTimeMinutes: 6,
+		isCurated: false
 	},
 	{
 		slug: 'a-pricing-playbook-for-bangladeshi-saas',
 		title: 'A Pricing Playbook for Bangladeshi SaaS',
 		category: 'Growth',
 		authorName: 'Nusrat Jahan',
-		readTimeMinutes: 9
+		readTimeMinutes: 9,
+		isCurated: true
 	},
 	{
 		slug: 'the-analyst-to-pm-transition',
 		title: 'The Analyst-to-PM Transition, Honestly',
 		category: 'Careers',
 		authorName: 'Rifat Hasan',
-		readTimeMinutes: 5
+		readTimeMinutes: 5,
+		isCurated: false
 	}
 ];
 

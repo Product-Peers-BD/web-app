@@ -39,6 +39,7 @@ export interface ArticleCard {
 	category: string;
 	authorName: string;
 	readTimeMinutes: number;
+	isCurated: boolean;
 }
 
 export interface ProductCard {

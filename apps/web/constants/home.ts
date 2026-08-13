@@ -201,6 +201,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'bKash',
 		slug: 'bkash',
+		logoUrl: '/logos/sponsors/bkash.png',
+		logoWidth: 207,
+		logoHeight: 92,
 		websiteUrl: 'https://www.bkash.com',
 		description: "Bangladesh's largest mobile financial services provider.",
 		featured: true
@@ -208,6 +211,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Chaldal',
 		slug: 'chaldal',
+		logoUrl: '/logos/sponsors/chaldal.png',
+		logoWidth: 320,
+		logoHeight: 92,
 		websiteUrl: 'https://chaldal.com',
 		description: 'On-demand grocery delivery across Dhaka and beyond.',
 		featured: true
@@ -215,6 +221,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Pathao',
 		slug: 'pathao',
+		logoUrl: '/logos/sponsors/pathao.png',
+		logoWidth: 262,
+		logoHeight: 92,
 		websiteUrl: 'https://pathao.com',
 		description: 'Ride-hailing, delivery, and logistics super-app.',
 		featured: true
@@ -222,6 +231,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Sheba.xyz',
 		slug: 'sheba-xyz',
+		logoUrl: '/logos/sponsors/sheba-xyz.png',
+		logoWidth: 329,
+		logoHeight: 92,
 		websiteUrl: 'https://sheba.xyz',
 		description: 'On-demand home and professional services marketplace.',
 		featured: true
@@ -229,6 +241,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Bondstein',
 		slug: 'bondstein',
+		logoUrl: '/logos/sponsors/bondstein.png',
+		logoWidth: 437,
+		logoHeight: 92,
 		websiteUrl: 'https://bondstein.com',
 		description: 'Product engineering studio building for global clients.',
 		featured: true
@@ -236,6 +251,9 @@ export const sponsors: SponsorItem[] = [
 	{
 		name: 'Bohubrihi',
 		slug: 'bohubrihi',
+		logoUrl: '/logos/sponsors/bohubrihi.png',
+		logoWidth: 272,
+		logoHeight: 92,
 		websiteUrl: 'https://bohubrihi.com',
 		description:
 			'Skills-based learning platform for working professionals.',

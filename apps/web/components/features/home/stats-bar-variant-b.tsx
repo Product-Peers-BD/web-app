@@ -41,11 +41,11 @@ export function StatsBarVariantB() {
 						<span className="relative inline-flex size-1.5 rounded-full bg-primary" />
 					</span>
 					<span className="font-mono text-[11px] tracking-[0.15em] text-muted-foreground uppercase">
-						Live numbers
+						Community growth
 					</span>
 				</div>
 
-				<div className="relative grid gap-px bg-border sm:grid-cols-[1.3fr_1fr]">
+				<div className="relative grid gap-px bg-border sm:grid-cols-[1fr_1.5fr]">
 					{featured && (
 						<div className="flex flex-col justify-between gap-8 bg-card px-6 py-6 sm:px-8 sm:py-7">
 							<div className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-muted-foreground uppercase sm:text-[11px]">
@@ -75,7 +75,7 @@ export function StatsBarVariantB() {
 						</div>
 					)}
 
-					<div className="grid grid-cols-2 gap-px bg-border">
+					<div className="grid grid-cols-4 gap-px bg-border">
 						{rest.map((stat) => {
 							const Icon = statIcons[stat.label] ?? Users;
 							return (

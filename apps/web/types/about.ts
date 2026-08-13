@@ -15,5 +15,7 @@ export interface ValuePillar {
 
 export interface TeamMember {
 	username: string;
+	// name: string;
 	designation: string;
+	// isMentor: boolean;
 }

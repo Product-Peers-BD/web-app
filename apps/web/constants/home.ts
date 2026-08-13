@@ -159,6 +159,19 @@ export const spotlightProducts: ProductCard[] = [
 
 export const contestPreview: ContestCard[] = [
 	{
+		slug: 'roadmap-rumble',
+		title: 'Roadmap Rumble',
+		mode: ContestPreviewMode.ONGOING,
+		dateLabel: 'Submissions close Aug 18'
+	},
+	{
+		slug: 'growth-metrics-hackathon',
+		title: 'Growth Metrics Hackathon',
+		mode: ContestPreviewMode.UPCOMING,
+		dateLabel: 'Registrations close Sep 12',
+		format: EventFormat.ONLINE
+	},
+	{
 		slug: 'product-sprint-2026',
 		title: 'Product Sprint 2026',
 		mode: ContestPreviewMode.UPCOMING,

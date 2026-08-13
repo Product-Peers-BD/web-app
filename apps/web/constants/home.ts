@@ -21,7 +21,8 @@ export const heroStats: StatItem[] = [
 	{ label: 'Articles published', value: '128' },
 	{ label: 'Case studies', value: '36' },
 	{ label: '1:1 sessions', value: '212' },
-	{ label: 'Products listed', value: '58' }
+	{ label: 'Products listed', value: '58' },
+	{ label: 'Sponsors onboarded', value: '15' }
 ];
 
 export const upcomingEvents: UpcomingEventCard[] = [

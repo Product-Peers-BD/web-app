@@ -1,7 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { featuredSponsors } from '@/constants/home';
-import Link from 'next/link';
 
 export function SponsorsStrip() {
 	return (

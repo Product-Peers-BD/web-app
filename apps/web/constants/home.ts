@@ -193,11 +193,105 @@ export const testimonials: TestimonialItem[] = [
 	}
 ];
 
-export const featuredSponsors: SponsorItem[] = [
-	{ name: 'bKash' },
-	{ name: 'Chaldal' },
-	{ name: 'Pathao' },
-	{ name: 'Sheba.xyz' },
-	{ name: 'Bondstein' },
-	{ name: 'Bohubrihi' }
+// TODO: Placeholder seed data pending the Sponsor entity/Admin CRUD + Media Library — see docs/requirements/shared-features.md.
+export const sponsors: SponsorItem[] = [
+	{
+		name: 'bKash',
+		slug: 'bkash',
+		websiteUrl: 'https://www.bkash.com',
+		description: "Bangladesh's largest mobile financial services provider.",
+		featured: true
+	},
+	{
+		name: 'Chaldal',
+		slug: 'chaldal',
+		websiteUrl: 'https://chaldal.com',
+		description: 'On-demand grocery delivery across Dhaka and beyond.',
+		featured: true
+	},
+	{
+		name: 'Pathao',
+		slug: 'pathao',
+		websiteUrl: 'https://pathao.com',
+		description: 'Ride-hailing, delivery, and logistics super-app.',
+		featured: true
+	},
+	{
+		name: 'Sheba.xyz',
+		slug: 'sheba-xyz',
+		websiteUrl: 'https://sheba.xyz',
+		description: 'On-demand home and professional services marketplace.',
+		featured: true
+	},
+	{
+		name: 'Bondstein',
+		slug: 'bondstein',
+		websiteUrl: 'https://bondstein.com',
+		description: 'Product engineering studio building for global clients.',
+		featured: true
+	},
+	{
+		name: 'Bohubrihi',
+		slug: 'bohubrihi',
+		websiteUrl: 'https://bohubrihi.com',
+		description:
+			'Skills-based learning platform for working professionals.',
+		featured: true
+	},
+	{
+		name: 'Runway Labs',
+		slug: 'runway-labs',
+		websiteUrl: 'https://runwaylabs.example',
+		description: 'Early-stage SaaS studio backing the workshop track.'
+	},
+	{
+		name: 'NorthBridge Cloud',
+		slug: 'northbridge-cloud',
+		websiteUrl: 'https://northbridgecloud.example',
+		description: 'Hosting and infrastructure partner for community demos.'
+	},
+	{
+		name: 'Inkline Press',
+		slug: 'inkline-press',
+		websiteUrl: 'https://inklinepress.example',
+		description: 'Print partner behind every meetup tee and badge.'
+	},
+	{
+		name: 'Fieldstone Design',
+		slug: 'fieldstone-design',
+		websiteUrl: 'https://fieldstonedesign.example',
+		description: 'Independent design studio supporting portfolio reviews.'
+	},
+	{
+		name: 'Loop Analytics',
+		slug: 'loop-analytics',
+		websiteUrl: 'https://loopanalytics.example',
+		description: 'Product analytics tooling for teams that ship weekly.'
+	},
+	{
+		name: 'Civic Stack',
+		slug: 'civic-stack',
+		websiteUrl: 'https://civicstack.example',
+		description: 'Govtech collective supporting the annual civic hackday.'
+	},
+	{
+		name: 'Anchor Payments',
+		slug: 'anchor-payments',
+		websiteUrl: 'https://anchorpayments.example',
+		description: 'Payments infrastructure for regional marketplaces.'
+	},
+	{
+		name: 'Verve Studio',
+		slug: 'verve-studio',
+		description: 'Brand and motion studio contributing event visuals.'
+	},
+	{
+		name: 'Northgate Logistics',
+		slug: 'northgate-logistics',
+		description: 'Delivery partner for community merch and swag drops.'
+	}
 ];
+
+export const featuredSponsors: SponsorItem[] = sponsors.filter(
+	(sponsor) => sponsor.featured
+);

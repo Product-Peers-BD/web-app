@@ -67,4 +67,9 @@ export interface TestimonialItem {
 
 export interface SponsorItem {
 	name: string;
+	slug: string;
+	logoUrl?: string;
+	websiteUrl?: string;
+	description?: string;
+	featured?: boolean;
 }

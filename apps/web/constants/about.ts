@@ -1,4 +1,13 @@
-import { MapPin, TrendingUp, Unlock, Users } from 'lucide-react';
+import {
+	GraduationCap,
+	LayoutGrid,
+	MapPin,
+	MessageCircle,
+	TrendingUp,
+	Trophy,
+	Unlock,
+	Users
+} from 'lucide-react';
 
 import type { Milestone, TeamMember, ValuePillar } from '@/types/about';
 
@@ -16,6 +25,7 @@ export const aboutMission = {
 export const timelineMilestones: Milestone[] = [
 	{
 		id: 'milestone-1',
+		icon: MessageCircle,
 		period: 'Oct 2025',
 		title: 'Eleven people, one WhatsApp group',
 		description:
@@ -23,6 +33,7 @@ export const timelineMilestones: Milestone[] = [
 	},
 	{
 		id: 'milestone-2',
+		icon: MapPin,
 		period: 'Dec 2025',
 		title: 'First Product Adda, Dhaka',
 		description:
@@ -30,6 +41,7 @@ export const timelineMilestones: Milestone[] = [
 	},
 	{
 		id: 'milestone-3',
+		icon: GraduationCap,
 		period: 'Feb 2026',
 		title: 'Mentor program opens',
 		description:
@@ -37,6 +49,7 @@ export const timelineMilestones: Milestone[] = [
 	},
 	{
 		id: 'milestone-4',
+		icon: Trophy,
 		period: 'Apr 2026',
 		title: 'Case Study Slam, Vol. 1',
 		description:
@@ -44,6 +57,7 @@ export const timelineMilestones: Milestone[] = [
 	},
 	{
 		id: 'milestone-5',
+		icon: Users,
 		period: 'Jun 2026',
 		title: '1,000 members',
 		description:
@@ -51,6 +65,7 @@ export const timelineMilestones: Milestone[] = [
 	},
 	{
 		id: 'milestone-6',
+		icon: LayoutGrid,
 		period: 'Aug 2026',
 		title: 'Products board launches',
 		description:

@@ -39,11 +39,11 @@ export function ContestsPreview() {
 							<Reveal
 								key={contest.slug}
 								delay={index * 100}
-								className="h-full"
+								className="h-full min-w-0"
 							>
-								<div className="flex h-full flex-col gap-5 rounded-xl border border-border bg-card p-5 sm:flex-row">
-									<MediaPlaceholder className="aspect-4/3 w-full shrink-0 sm:w-48" />
-									<div className="flex flex-1 flex-col">
+								<div className="flex h-full flex-col gap-5 rounded-xl border border-border bg-card p-5 lg:flex-row">
+									<MediaPlaceholder className="aspect-4/3 w-full shrink-0 lg:w-48" />
+									<div className="flex min-w-0 flex-1 flex-col">
 										{contest.mode ===
 										ContestPreviewMode.WINNERS ? (
 											<Badge className="w-fit gap-1 rounded-sm bg-accent font-mono text-[10px] text-accent-foreground uppercase">

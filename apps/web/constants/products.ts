@@ -31,8 +31,8 @@ export const products: ProductDetail[] = [
 				isCreator: true
 			},
 			{
-				slug: 'tanvir-ahmed',
-				name: 'Tanvir Ahmed',
+				slug: 'imran-hossain',
+				name: 'Imran Hossain',
 				role: 'Engineering Lead'
 			}
 		],

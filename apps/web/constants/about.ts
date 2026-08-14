@@ -101,7 +101,7 @@ export const valuePillars: ValuePillar[] = [
 ];
 
 export const aboutTeam: TeamMember[] = [
-	{ username: 'tanvir-ahmed', designation: 'Founder' },
+	{ username: 'imran-hossain', designation: 'Founder' },
 	{
 		username: 'iftekhar-alam',
 		designation: 'Co-Founder & Head of Mentorship'

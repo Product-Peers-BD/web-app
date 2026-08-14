@@ -190,10 +190,10 @@ export const profiles: PublicProfile[] = [
 		]
 	},
 	{
-		username: 'tanvir-ahmed',
-		name: 'Tanvir Ahmed',
-		title: 'Product Lead',
-		company: 'Sheba Platform',
+		username: 'imran-hossain',
+		name: 'Imran Hossain',
+		title: 'Co-Founder & Director of Product',
+		company: 'Flizz',
 		city: 'Dhaka',
 		country: 'Bangladesh',
 		bio: "I started Product Peers BD in 2025 because I was tired of joining calls with PMs in Bangalore or Jakarta and hearing advice that assumed a payment stack, a logistics network, or a user base we don't have here. Now I run product at Sheba Platform by day, and spend most nights reading the case studies members post — still the best part of my week.",
@@ -206,23 +206,30 @@ export const profiles: PublicProfile[] = [
 		],
 		experience: [
 			{
-				company: 'Sheba Platform',
-				title: 'Product Lead',
-				duration: 'May 2023 — Present',
+				company: 'Flizz',
+				title: 'Co-Founder & Director of Product',
+				duration: 'Nov 2024 — Present',
 				description:
-					'Own the supply-side product for on-demand home services across six cities.'
+					'Drive product roadmap through continuous market research and competitor analysis. Validate product opportunities with structured experiments and prototypes. Define success metrics and align cross-functional teams around shared outcomes.'
 			},
 			{
-				company: 'Pathao',
-				title: 'Senior Product Manager',
-				duration: 'Jan 2020 — Apr 2023',
+				company: 'Gravio',
+				title: 'Business Analyst',
+				duration: 'Apr 2022 — Oct 2024',
 				description:
-					'Shipped the merchant onboarding flow for Pathao Food.'
+					'Analyzed stakeholder requirements and created actionable specifications aligned with business strategy. Developed process documentation and user stories that minimized development friction. Served as the bridge between business teams and engineering, ensuring shared understanding'
+			},
+			{
+				company: 'Freelance',
+				title: 'Digital Marketing Expert',
+				duration: 'Feb 2019 — Mar 2023',
+				description:
+					'Managed and optimized Facebook ad campaigns using audience data, A/B testing, and performance analysis. Developed multi-channel marketing strategies to acquire and retain customers profitably. Analyzed campaign data to continuously improve conversion rates and ROAS'
 			}
 		],
 		socialLinks: {
-			linkedin: 'https://linkedin.com/in/tanvir-ahmed',
-			twitter: 'https://twitter.com/tanvirahmed'
+			linkedin: 'https://linkedin.com/in/imranhossain-pm',
+			twitter: 'https://twitter.com/imranhossain'
 		},
 		followerCount: 2140,
 		isMentor: true,
@@ -234,20 +241,20 @@ export const profiles: PublicProfile[] = [
 		joinedAt: '2025-10-12T10:00:00+06:00',
 		activities: [
 			{
-				id: 'tanvir-founded',
+				id: 'imran-founded',
 				type: ActivityType.JOINED_PLATFORM,
 				occurredAt: '2025-10-12T10:00:00+06:00',
 				description: 'Founded Product Peers BD'
 			},
 			{
-				id: 'tanvir-article',
+				id: 'imran-article',
 				type: ActivityType.PUBLISHED_ARTICLE,
 				occurredAt: '2026-07-15T09:00:00+06:00',
 				description: "Published 'Writing PRDs People Actually Read'",
 				href: '/articles/writing-prds-people-actually-read'
 			},
 			{
-				id: 'tanvir-judged',
+				id: 'imran-judged',
 				type: ActivityType.JUDGED_CONTEST,
 				occurredAt: '2026-07-30T18:00:00+06:00',
 				description: 'Judged Case Study Slam, Vol. 3',

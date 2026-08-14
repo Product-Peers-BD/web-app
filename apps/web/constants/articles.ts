@@ -13,9 +13,9 @@ const authors = {
 		title: 'Founder, ShipFast Labs',
 		isMentor: true
 	},
-	tanvir: {
-		slug: 'tanvir-ahmed',
-		name: 'Tanvir Ahmed',
+	imranHossain: {
+		slug: 'imran-hossain',
+		name: 'Imran Hossain',
 		title: 'Head of Growth, D2C',
 		isMentor: false
 	},
@@ -50,7 +50,7 @@ export const articles: ArticleDetail[] = [
 		excerpt:
 			'Most PRDs die in a Google Doc nobody scrolls past page one of. Here’s the structure that gets engineers and designers to actually read yours.',
 		category: 'Product Management',
-		author: authors.tanvir,
+		author: authors.imranHossain,
 		isCurated: true,
 		readTimeMinutes: 6,
 		viewCount: 5420,
@@ -72,7 +72,7 @@ export const articles: ArticleDetail[] = [
 			{
 				type: 'quote',
 				text: 'A PRD is not a record of your thinking. It’s a tool for someone else’s thinking.',
-				attribution: 'Tanvir Ahmed'
+				attribution: 'Imran Hossain'
 			},
 			{
 				type: 'paragraph',
@@ -94,7 +94,7 @@ export const articles: ArticleDetail[] = [
 				postedAt: daysAgo(1),
 				replies: [
 					{
-						authorName: 'Tanvir Ahmed',
+						authorName: 'Imran Hossain',
 						authorIsMentor: false,
 						body: 'Steal away — happy to share the actual template if useful.',
 						postedAt: daysAgo(1)
@@ -219,7 +219,7 @@ export const articles: ArticleDetail[] = [
 				replies: []
 			},
 			{
-				authorName: 'Tanvir Ahmed',
+				authorName: 'Imran Hossain',
 				body: 'The "recommendation + next step" habit is underrated advice for basically every function, not just analysts.',
 				postedAt: daysAgo(4),
 				replies: [
@@ -450,7 +450,7 @@ export const articles: ArticleDetail[] = [
 		excerpt:
 			'A transcript-style breakdown of a standup that stayed useful for eight straight months — and the three habits that kept it that way.',
 		category: 'Leadership',
-		author: authors.tanvir,
+		author: authors.imranHossain,
 		isCurated: false,
 		readTimeMinutes: 4,
 		viewCount: 760,
@@ -536,7 +536,7 @@ export const articles: ArticleDetail[] = [
 		excerpt:
 			'A changelog is the most honest strategy document a competitor will ever publish. Most PMs skim it. Here’s how to actually read one.',
 		category: 'Product Management',
-		author: authors.tanvir,
+		author: authors.imranHossain,
 		isCurated: false,
 		readTimeMinutes: 5,
 		viewCount: 540,

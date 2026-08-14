@@ -73,8 +73,8 @@ export const spotlightMentors: MentorCard[] = [
 		skills: ['Roadmapping', 'Discovery', 'Fintech']
 	},
 	{
-		slug: 'tanvir-ahmed',
-		name: 'Tanvir Ahmed',
+		slug: 'imran-hossain',
+		name: 'Imran Hossain',
 		headline: 'Head of Growth, D2C',
 		skills: ['Growth', 'Lifecycle', 'Analytics']
 	},
@@ -115,7 +115,7 @@ export const featuredArticles: ArticleCard[] = [
 		slug: 'writing-prds-people-actually-read',
 		title: 'Writing PRDs People Actually Read',
 		category: 'Product Management',
-		authorName: 'Tanvir Ahmed',
+		authorName: 'Imran Hossain',
 		readTimeMinutes: 6,
 		isCurated: false
 	},

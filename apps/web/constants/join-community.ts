@@ -95,7 +95,7 @@ export const communityPulse: CommunityPulseEvent[] = [
 	{
 		id: 'pulse-7',
 		type: ActivityType.PUBLISHED_ARTICLE,
-		actorName: 'Tanvir Ahmed',
+		actorName: 'Imran Hossain',
 		occurredAt: minutesAgo(1350),
 		description: "published 'Writing PRDs People Actually Read.'"
 	}

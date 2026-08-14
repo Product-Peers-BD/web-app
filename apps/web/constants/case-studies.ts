@@ -25,9 +25,9 @@ const authors = {
 		title: 'Founder, ShipFast Labs',
 		isMentor: true
 	},
-	tanvir: {
-		slug: 'tanvir-ahmed',
-		name: 'Tanvir Ahmed',
+	imranHossain: {
+		slug: 'imran-hossain',
+		name: 'Imran Hossain',
 		title: 'Head of Growth, D2C',
 		isMentor: false
 	},
@@ -223,7 +223,7 @@ export const caseStudies: CaseStudyDetail[] = [
 		clientName: 'ShopUp',
 		category: 'Pricing & Monetization',
 		industries: ['E-commerce', 'Logistics'],
-		author: authors.tanvir,
+		author: authors.imranHossain,
 		viewCount: 3110,
 		likeCount: 164,
 		readTimeMinutes: 6,
@@ -259,7 +259,7 @@ export const caseStudies: CaseStudyDetail[] = [
 				postedAt: daysAgo(11),
 				replies: [
 					{
-						authorName: 'Tanvir Ahmed',
+						authorName: 'Imran Hossain',
 						body: 'Some at first, until we started showing the "why" — delivery zone density — right on the price line. Complaints dropped fast once it wasn’t a black box.',
 						postedAt: daysAgo(10)
 					}
@@ -440,7 +440,7 @@ export const caseStudies: CaseStudyDetail[] = [
 		],
 		comments: [
 			{
-				authorName: 'Tanvir Ahmed',
+				authorName: 'Imran Hossain',
 				body: 'The seven-day timing detail is underrated — most reorder nudges I’ve seen just fire on a generic 3-day timer regardless of category.',
 				postedAt: daysAgo(23),
 				replies: []

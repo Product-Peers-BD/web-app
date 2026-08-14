@@ -38,8 +38,8 @@ export const contests: ContestDetail[] = [
 				name: 'Team Velocity',
 				members: [
 					{
-						slug: 'tanvir-ahmed',
-						name: 'Tanvir Ahmed',
+						slug: 'imran-hossain',
+						name: 'Imran Hossain',
 						isLeader: true
 					},
 					{ slug: 'nabila-karim', name: 'Nabila Karim' },
@@ -106,7 +106,7 @@ export const contests: ContestDetail[] = [
 		],
 		discussions: [
 			{
-				authorName: 'Tanvir Ahmed',
+				authorName: 'Imran Hossain',
 				postedAt: '2026-08-04T11:20:00+06:00',
 				body: "Are we allowed to hack on a channel outside our own product's category, or does it need to tie back to what we actually work on?",
 				comments: [
@@ -213,7 +213,7 @@ export const contests: ContestDetail[] = [
 						name: 'Nabila Karim',
 						isLeader: true
 					},
-					{ slug: 'tanvir-ahmed', name: 'Tanvir Ahmed' }
+					{ slug: 'imran-hossain', name: 'Imran Hossain' }
 				]
 			}
 		],
@@ -525,8 +525,8 @@ export const contests: ContestDetail[] = [
 				name: 'Team Uddyog',
 				members: [
 					{
-						slug: 'tanvir-ahmed',
-						name: 'Tanvir Ahmed',
+						slug: 'imran-hossain',
+						name: 'Imran Hossain',
 						isLeader: true
 					},
 					{ slug: 'nabila-karim', name: 'Nabila Karim' }
@@ -735,7 +735,7 @@ export const contests: ContestDetail[] = [
 						name: 'Nabila Karim',
 						isLeader: true
 					},
-					{ slug: 'tanvir-ahmed', name: 'Tanvir Ahmed' },
+					{ slug: 'imran-hossain', name: 'Imran Hossain' },
 					{ slug: 'nadia-islam', name: 'Nadia Islam' }
 				]
 			}
@@ -920,7 +920,7 @@ export const contests: ContestDetail[] = [
 						isLeader: true
 					},
 					{ slug: 'mahin-islam', name: 'Mahin Islam' },
-					{ slug: 'tanvir-ahmed', name: 'Tanvir Ahmed' }
+					{ slug: 'imran-hossain', name: 'Imran Hossain' }
 				]
 			},
 			{

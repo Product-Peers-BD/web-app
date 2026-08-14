@@ -1,13 +1,26 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import type { Metadata } from 'next';
+import { IBM_Plex_Mono, Manrope, Space_Grotesk } from 'next/font/google';
 
 import '@workspace/ui/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
+import { siteConfig } from '@/configs/site';
 import { cn } from '@workspace/ui/lib/utils';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+export const metadata: Metadata = {
+	title: { default: siteConfig.name, template: `%s — ${siteConfig.name}` },
+	description: siteConfig.description
+};
 
-const fontMono = Geist_Mono({
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-sans' });
+
+const spaceGrotesk = Space_Grotesk({
 	subsets: ['latin'],
+	variable: '--font-heading'
+});
+
+const plexMono = IBM_Plex_Mono({
+	subsets: ['latin'],
+	weight: ['400', '500', '600'],
 	variable: '--font-mono'
 });
 
@@ -22,9 +35,10 @@ export default function RootLayout({
 			suppressHydrationWarning
 			className={cn(
 				'antialiased',
-				fontMono.variable,
-				'font-sans',
-				geist.variable
+				manrope.variable,
+				spaceGrotesk.variable,
+				plexMono.variable,
+				'font-sans'
 			)}
 		>
 			<body>

@@ -1,0 +1,4 @@
+export enum ContactType {
+	GENERAL_INQUIRY = 'GENERAL_INQUIRY',
+	SPONSORSHIP = 'SPONSORSHIP'
+}

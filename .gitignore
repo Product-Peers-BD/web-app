@@ -44,3 +44,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# impeccable (local skill tooling + runtime cache, not shared)
+.agents/skills/impeccable
+.claude/skills/impeccable
+.github/skills/impeccable
+.github/agents/impeccable-*.agent.md
+.github/hooks/impeccable.json
+.codex/hooks.json
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/live/
+.impeccable/critique/
+apps/web/.impeccable/hook.cache.json
+apps/web/.impeccable/live/

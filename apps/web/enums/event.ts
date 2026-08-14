@@ -1,0 +1,32 @@
+export enum EventType {
+	MENTOR_SESSION = 'MENTOR_SESSION',
+	PANEL_DISCUSSION = 'PANEL_DISCUSSION',
+	COMMUNITY_ADDA = 'COMMUNITY_ADDA',
+	MEETUP = 'MEETUP'
+}
+
+export enum EventFormat {
+	ONLINE = 'ONLINE',
+	PHYSICAL = 'PHYSICAL',
+	HYBRID = 'HYBRID'
+}
+
+export enum EventStatus {
+	ONGOING = 'ONGOING',
+	UPCOMING = 'UPCOMING',
+	PAST = 'PAST'
+}
+
+export enum SpeakerRole {
+	SPEAKER = 'SPEAKER',
+	HOST = 'HOST',
+	MENTOR = 'MENTOR',
+	PANELIST = 'PANELIST'
+}
+
+export enum SponsorTierName {
+	TITLE = 'TITLE',
+	GOLD = 'GOLD',
+	SILVER = 'SILVER',
+	COMMUNITY = 'COMMUNITY'
+}

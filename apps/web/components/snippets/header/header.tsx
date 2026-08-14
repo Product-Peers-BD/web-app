@@ -18,7 +18,7 @@ export function Header() {
 					<Logo />
 				</Link>
 
-				<nav className="hidden items-center gap-1 md:flex">
+				<nav className="hidden items-center gap-1 lg:flex">
 					{primaryNavItems.map((item) => (
 						<Link
 							key={item.href}
@@ -35,13 +35,13 @@ export function Header() {
 					<Button
 						asChild
 						variant="ghost"
-						className="hidden md:inline-flex"
+						className="hidden lg:inline-flex"
 					>
 						<Link href="/sign-in">Sign In</Link>
 					</Button>
 					<Button
 						asChild
-						className="hidden md:inline-flex"
+						className="hidden lg:inline-flex"
 					>
 						<Link href="/join-community">Join Community</Link>
 					</Button>
@@ -49,7 +49,7 @@ export function Header() {
 						asChild
 						variant="accent"
 						size="sm"
-						className="md:hidden"
+						className="lg:hidden"
 					>
 						<Link href="/join-community">Join</Link>
 					</Button>

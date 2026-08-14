@@ -39,7 +39,7 @@ export function UpcomingEvents() {
 						restEvents.length > 0 && 'lg:grid-cols-[1.3fr_1fr]'
 					)}
 				>
-					<Reveal className="h-full">
+					<Reveal className="h-full min-w-0">
 						<article className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card sm:flex-row">
 							<MediaPlaceholder className="aspect-4/3 w-full shrink-0 sm:aspect-auto sm:w-2/5" />
 							<div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -95,7 +95,7 @@ export function UpcomingEvents() {
 					</Reveal>
 
 					{restEvents.length > 0 ? (
-						<div className="flex flex-col divide-y divide-border rounded-xl border border-border bg-card">
+						<div className="flex min-w-0 flex-col divide-y divide-border rounded-xl border border-border bg-card">
 							{restEvents.map((event, index) => (
 								<Reveal
 									key={event.slug}

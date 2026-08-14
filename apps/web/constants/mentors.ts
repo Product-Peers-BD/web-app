@@ -17,17 +17,17 @@ export const mentors: MentorListItem[] = [
 		]
 	},
 	{
-		slug: 'tanvir-ahmed',
-		name: 'Tanvir Ahmed',
+		slug: 'imran-hossain',
+		name: 'Imran Hossain',
 		headline: 'Head of Growth, D2C',
 		skills: ['Growth', 'Lifecycle', 'Analytics'],
 		sessionDurationMinutes: 30,
 		isPaid: true,
 		priceBdt: 800,
 		slots: [
-			{ id: 'tanvir-1', startAt: '2026-08-14T20:30:00+06:00' },
-			{ id: 'tanvir-2', startAt: '2026-08-16T18:00:00+06:00' },
-			{ id: 'tanvir-3', startAt: '2026-08-16T18:30:00+06:00' }
+			{ id: 'imran-1', startAt: '2026-08-14T20:30:00+06:00' },
+			{ id: 'imran-2', startAt: '2026-08-16T18:00:00+06:00' },
+			{ id: 'imran-3', startAt: '2026-08-16T18:30:00+06:00' }
 		]
 	},
 	{

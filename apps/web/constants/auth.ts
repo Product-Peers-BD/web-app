@@ -15,7 +15,7 @@ export const authBadgeMembers: AuthBadgeMember[] = [
 		isMentor: false
 	},
 	{
-		name: 'Tanvir Ahmed',
+		name: 'Imran Hossain',
 		title: 'Product Lead',
 		company: 'Sheba Platform',
 		isMentor: true

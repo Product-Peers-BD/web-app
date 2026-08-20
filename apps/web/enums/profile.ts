@@ -12,6 +12,14 @@ export enum ActivityType {
 	FOLLOWER_MILESTONE = 'FOLLOWER_MILESTONE'
 }
 
+export enum ActivityEntityType {
+	CONTEST = 'CONTEST',
+	ARTICLE = 'ARTICLE',
+	CASE_STUDY = 'CASE_STUDY',
+	PRODUCT = 'PRODUCT',
+	EVENT = 'EVENT'
+}
+
 export enum TimelineOrder {
 	LATEST_FIRST = 'LATEST_FIRST',
 	OLDEST_FIRST = 'OLDEST_FIRST'

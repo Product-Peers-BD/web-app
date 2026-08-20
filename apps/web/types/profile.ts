@@ -1,4 +1,4 @@
-import type { ActivityType } from '@/enums/profile';
+import type { ActivityEntityType, ActivityType } from '@/enums/profile';
 
 export interface ProfileSocialLinks {
 	linkedin?: string;
@@ -19,6 +19,8 @@ export interface ProfileActivity {
 	occurredAt: string;
 	description: string;
 	href?: string;
+	entityType?: ActivityEntityType;
+	entitySlug?: string;
 }
 
 export interface MentorCredentials {

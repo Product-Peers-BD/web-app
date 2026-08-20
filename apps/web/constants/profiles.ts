@@ -1,4 +1,4 @@
-import { ActivityType } from '@/enums/profile';
+import { ActivityEntityType, ActivityType } from '@/enums/profile';
 import type { PublicProfile } from '@/types/profile';
 
 export const profiles: PublicProfile[] = [
@@ -61,7 +61,9 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-05-22T18:00:00+06:00',
 				description:
 					"Won Roadmap Rumble as team leader of Team Anchor — 'A six-month roadmap that survives every stakeholder objection'",
-				href: '/contests/roadmap-rumble'
+				href: '/contests/roadmap-rumble',
+				entityType: ActivityEntityType.CONTEST,
+				entitySlug: 'roadmap-rumble'
 			},
 			{
 				id: 'sadia-case-study',
@@ -69,7 +71,9 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-06-14T09:00:00+06:00',
 				description:
 					"Published the case study 'Unifying Three Internal Dashboards Into One' for City Bank",
-				href: '/case-studies/unifying-three-dashboards-into-one'
+				href: '/case-studies/unifying-three-dashboards-into-one',
+				entityType: ActivityEntityType.CASE_STUDY,
+				entitySlug: 'unifying-three-dashboards-into-one'
 			},
 			{
 				id: 'sadia-shonar-bangla',
@@ -77,14 +81,18 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-07-30T18:00:00+06:00',
 				description:
 					'Champion with Team Shonar Bangla at Case Study Slam, Vol. 3',
-				href: '/contests/case-study-slam-vol-3'
+				href: '/contests/case-study-slam-vol-3',
+				entityType: ActivityEntityType.CONTEST,
+				entitySlug: 'case-study-slam-vol-3'
 			},
 			{
 				id: 'sadia-shelfie',
 				type: ActivityType.LAUNCHED_PRODUCT,
 				occurredAt: '2026-07-20T10:00:00+06:00',
 				description: 'Launched Shelfie on Product Peers BD',
-				href: '/products/shelfie'
+				href: '/products/shelfie',
+				entityType: ActivityEntityType.PRODUCT,
+				entitySlug: 'shelfie'
 			},
 			{
 				id: 'sadia-article',
@@ -92,7 +100,9 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-08-05T11:00:00+06:00',
 				description:
 					"Published 'Cohort Retention Metrics That Actually Matter'",
-				href: '/articles/cohort-retention-metrics-that-actually-matter'
+				href: '/articles/cohort-retention-metrics-that-actually-matter',
+				entityType: ActivityEntityType.ARTICLE,
+				entitySlug: 'cohort-retention-metrics-that-actually-matter'
 			},
 			{
 				id: 'sadia-milestone',
@@ -163,7 +173,9 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-06-01T09:00:00+06:00',
 				description:
 					"Published the case study 'Redesigning Onboarding for a Neobank' for bKash",
-				href: '/case-studies/redesigning-onboarding-for-a-neobank'
+				href: '/case-studies/redesigning-onboarding-for-a-neobank',
+				entityType: ActivityEntityType.CASE_STUDY,
+				entitySlug: 'redesigning-onboarding-for-a-neobank'
 			},
 			{
 				id: 'nusrat-article',
@@ -171,7 +183,9 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-07-15T11:00:00+06:00',
 				description:
 					"Published 'A Pricing Playbook for Bangladeshi SaaS'",
-				href: '/articles/a-pricing-playbook-for-bangladeshi-saas'
+				href: '/articles/a-pricing-playbook-for-bangladeshi-saas',
+				entityType: ActivityEntityType.ARTICLE,
+				entitySlug: 'a-pricing-playbook-for-bangladeshi-saas'
 			},
 			{
 				id: 'nusrat-spoke',
@@ -179,7 +193,9 @@ export const profiles: PublicProfile[] = [
 				occurredAt: '2026-08-13T00:00:00+06:00',
 				description:
 					"Moderating 'AI in Product Strategy: A Panel Discussion'",
-				href: '/events/ai-product-strategy-panel'
+				href: '/events/ai-product-strategy-panel',
+				entityType: ActivityEntityType.EVENT,
+				entitySlug: 'ai-product-strategy-panel'
 			},
 			{
 				id: 'nusrat-milestone',
@@ -251,14 +267,18 @@ export const profiles: PublicProfile[] = [
 				type: ActivityType.PUBLISHED_ARTICLE,
 				occurredAt: '2026-07-15T09:00:00+06:00',
 				description: "Published 'Writing PRDs People Actually Read'",
-				href: '/articles/writing-prds-people-actually-read'
+				href: '/articles/writing-prds-people-actually-read',
+				entityType: ActivityEntityType.ARTICLE,
+				entitySlug: 'writing-prds-people-actually-read'
 			},
 			{
 				id: 'imran-judged',
 				type: ActivityType.JUDGED_CONTEST,
 				occurredAt: '2026-07-30T18:00:00+06:00',
 				description: 'Judged Case Study Slam, Vol. 3',
-				href: '/contests/case-study-slam-vol-3'
+				href: '/contests/case-study-slam-vol-3',
+				entityType: ActivityEntityType.CONTEST,
+				entitySlug: 'case-study-slam-vol-3'
 			}
 		]
 	},

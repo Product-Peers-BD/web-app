@@ -17,10 +17,23 @@ import {
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 
+import { ArticleCard } from '@/components/features/articles/article-card';
+import { CaseStudyCard } from '@/components/features/case-studies/case-study-card';
+import { ContestCard } from '@/components/features/contests/contest-card';
+import { EventCard } from '@/components/features/events/event-card';
+import { ProductCard } from '@/components/features/products/product-card';
 import { Reveal } from '@/components/snippets/reveal/reveal';
-import { ActivityType, TimelineOrder } from '@/enums/profile';
+import {
+	ActivityEntityType,
+	ActivityType,
+	TimelineOrder
+} from '@/enums/profile';
 import type { ProfileActivity } from '@/types/profile';
 import { formatArticleDate } from '@/utils/format-article-date';
+import {
+	resolveActivityEntity,
+	type ResolvedActivityEntity
+} from '@/utils/resolve-activity-entity';
 import { Button } from '@workspace/ui/components/button';
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -45,6 +58,21 @@ const mentorGatedTypes = new Set<ActivityType>([
 	ActivityType.SPOKE_AT_EVENT,
 	ActivityType.JUDGED_CONTEST
 ]);
+
+function ActivityEntityCard({ entity }: { entity: ResolvedActivityEntity }) {
+	switch (entity.type) {
+		case ActivityEntityType.CONTEST:
+			return <ContestCard contest={entity.contest} />;
+		case ActivityEntityType.ARTICLE:
+			return <ArticleCard article={entity.article} />;
+		case ActivityEntityType.CASE_STUDY:
+			return <CaseStudyCard caseStudy={entity.caseStudy} />;
+		case ActivityEntityType.PRODUCT:
+			return <ProductCard product={entity.product} />;
+		case ActivityEntityType.EVENT:
+			return <EventCard event={entity.event} />;
+	}
+}
 
 interface ActivityLedgerProps {
 	activities: ProfileActivity[];
@@ -88,21 +116,22 @@ export function ActivityLedger({ activities }: ActivityLedgerProps) {
 				</Button>
 			</div>
 
-			<ol className="mt-6">
+			<ol className="mt-6 flex flex-col gap-3">
 				{sorted.map((activity, index) => {
 					const Icon = activityIcons[activity.type];
 					const isCredential = mentorGatedTypes.has(activity.type);
+					const entity = resolveActivityEntity(activity);
 
 					return (
 						<Reveal
 							key={activity.id}
 							delay={index * 40}
 						>
-							<li className="relative flex gap-4 pb-7 last:pb-0">
+							<li className="relative flex gap-4 pb-8 last:pb-0">
 								{index !== sorted.length - 1 ? (
 									<span
 										aria-hidden
-										className="absolute top-8 left-[15px] h-[calc(100%-1.25rem)] w-px bg-border"
+										className="absolute top-8 left-3.75 h-[calc(100%-1.25rem)] w-px bg-border"
 									/>
 								) : null}
 								<span
@@ -131,6 +160,13 @@ export function ActivityLedger({ activities }: ActivityLedgerProps) {
 											{activity.description}
 										</p>
 									)}
+									{entity ? (
+										<div className="mt-3">
+											<ActivityEntityCard
+												entity={entity}
+											/>
+										</div>
+									) : null}
 								</div>
 							</li>
 						</Reveal>

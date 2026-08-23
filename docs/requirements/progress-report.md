@@ -72,6 +72,16 @@ Last updated: 2026-08-07 (rev. 10 — Admin & Super Admin Dashboard fully drafte
 
 ---
 
+## Coming Soon App (separate, temporary — not a core product feature)
+
+> Standalone single-page app for `productpeersbd.org` prior to production launch of `apps/web`. Own lifecycle (built, deployed, then retired), so it's not counted in the Summary table below. Full spec: `docs/requirements/coming-soon-app-requirements.md`.
+
+| Feature          | Status     | File                                                |
+| ---------------- | ---------- | --------------------------------------------------- |
+| Coming Soon page | ✅ Covered | `docs/requirements/coming-soon-app-requirements.md` |
+
+---
+
 ## Summary
 
 | Area                          | Total | Covered | Remaining                                      |

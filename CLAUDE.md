@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 All commands are run from the monorepo root using `pnpm` and coordinated via Turborepo.
 
 ```bash
-pnpm dev          # Start all apps in dev mode (web on :3300, dashboard on :3400, api on :3500)
+pnpm dev          # Start all apps in dev mode (web on :3300, dashboard on :3400, api on :3500, coming-soon on :3600)
 pnpm build        # Build all packages and apps
 pnpm lint         # Lint all packages
 pnpm typecheck    # Type-check all packages
@@ -72,6 +72,7 @@ This is a **pnpm + Turborepo monorepo** with two workspace groups:
 - `apps/web` — Next.js 16 app (React 19, App Router, Tailwind CSS v4), dev server on port 3300
 - `apps/dashboard` — Next.js 16 app, same stack/scaffold as `web`, dev server on port 3400
 - `apps/api` — Express 5 + TypeScript backend API, dev server on port 3500 (see `.claude/rules/conventions.md` for its structure and planned stack)
+- `apps/coming-soon` — Next.js 16 app, same stack/scaffold as `web`, dev server on port 3600. A standalone, temporary pre-launch placeholder for `productpeersbd.org` — retired once `apps/web` ships to production. Not part of the core product; see `docs/requirements/coming-soon-app-requirements.md`.
 - `packages/ui` — Shared component library (shadcn/ui, Radix UI, CVA)
 - `packages/typescript-config` — Shared `tsconfig` presets
 - `packages/eslint-config` — Shared ESLint configs

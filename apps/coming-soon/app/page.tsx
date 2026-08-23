@@ -3,6 +3,7 @@ import { Mail } from 'lucide-react';
 import { StatusConsole } from '@/components/features/coming-soon/status-console';
 import { Logo } from '@/components/snippets/logo/logo';
 import { Reveal } from '@/components/snippets/reveal/reveal';
+import { ThemeToggle } from '@/components/snippets/theme-toggle/theme-toggle';
 import { siteConfig } from '@/configs/site';
 import { socialLinks } from '@/configs/social';
 import { getLaunchDate } from '@/utils/get-launch-date';
@@ -13,6 +14,10 @@ export default function ComingSoonPage() {
 
 	return (
 		<div className="flex min-h-svh flex-col bg-background">
+			<div className="fixed top-4 right-4 z-20 sm:top-6 sm:right-6">
+				<ThemeToggle />
+			</div>
+
 			<section className="relative flex flex-1 items-center overflow-hidden">
 				<div
 					aria-hidden
@@ -26,8 +31,8 @@ export default function ComingSoonPage() {
 				<div className="relative mx-auto flex w-full max-w-3xl flex-col items-center px-4 py-20 text-center sm:px-6 lg:px-8">
 					<Reveal trigger="mount">
 						<Logo
-							variant="mark"
-							className="h-9"
+							variant="lockup"
+							className="h-8 sm:h-9"
 						/>
 					</Reveal>
 

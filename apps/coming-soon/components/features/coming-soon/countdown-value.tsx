@@ -35,14 +35,25 @@ interface CountdownValueProps {
 }
 
 export function CountdownValue({ target }: CountdownValueProps) {
-	const [remaining, setRemaining] = useState(() => getRemaining(target));
+	// undefined = not yet mounted (server-rendered markup and the client's first
+	// hydration pass must match exactly, so the real, time-dependent value is only
+	// computed once mounted, in the effect below, to avoid a hydration mismatch).
+	// null = mounted and the target has already passed.
+	const [remaining, setRemaining] = useState<Remaining | null | undefined>(
+		undefined
+	);
 
 	useEffect(() => {
+		setRemaining(getRemaining(target));
 		const id = setInterval(() => setRemaining(getRemaining(target)), 1000);
 		return () => clearInterval(id);
 	}, [target]);
 
-	if (!remaining) {
+	if (remaining === undefined) {
+		return <span className="tabular-nums">--d --h --m --s</span>;
+	}
+
+	if (remaining === null) {
 		return <span>Launching now</span>;
 	}
 

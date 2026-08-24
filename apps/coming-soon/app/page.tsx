@@ -3,6 +3,7 @@ import { Mail } from 'lucide-react';
 import { StatusConsole } from '@/components/features/coming-soon/status-console';
 import { Logo } from '@/components/snippets/logo/logo';
 import { Reveal } from '@/components/snippets/reveal/reveal';
+import { socialIcons } from '@/components/snippets/social-icon/social-icon';
 import { ThemeToggle } from '@/components/snippets/theme-toggle/theme-toggle';
 import { siteConfig } from '@/configs/site';
 import { socialLinks } from '@/configs/social';
@@ -32,7 +33,7 @@ export default function ComingSoonPage() {
 					<Reveal trigger="mount">
 						<Logo
 							variant="lockup"
-							className="h-8 sm:h-9"
+							className="h-10 sm:h-12"
 						/>
 					</Reveal>
 
@@ -56,10 +57,10 @@ export default function ComingSoonPage() {
 						className="mt-6"
 					>
 						<h1 className="font-heading text-4xl leading-[1.05] font-semibold tracking-tight text-foreground sm:text-6xl">
-							The community&apos;s live.
+							The community is live.
 							<br />
 							<span className="text-primary">
-								The platform&apos;s next.
+								The platform is next.
 							</span>
 						</h1>
 					</Reveal>
@@ -101,30 +102,28 @@ export default function ComingSoonPage() {
 							<span className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
 								Follow the build
 							</span>
-							<div className="flex items-center gap-4">
-								{socialLinks.map((social, index) => (
-									<span
-										key={social.href}
-										className="flex items-center gap-4"
-									>
-										{index > 0 && (
-											<span
-												aria-hidden
-												className="text-border"
-											>
-												·
-											</span>
-										)}
+							<div className="flex items-center gap-6">
+								{socialLinks.map((social) => {
+									const Icon = socialIcons[social.label];
+
+									return (
 										<a
+											key={social.href}
 											href={social.href}
 											target="_blank"
 											rel="noreferrer"
-											className="font-mono text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+											className="flex items-center gap-1.5 font-mono text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
 										>
+											{Icon && (
+												<Icon
+													aria-hidden
+													className="size-3.5"
+												/>
+											)}
 											{social.label}
 										</a>
-									</span>
-								))}
+									);
+								})}
 							</div>
 						</div>
 

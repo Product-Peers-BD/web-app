@@ -2,6 +2,8 @@
 
 > Living document — updated every time a feature's requirements doc is completed or meaningfully changed. Check this file instead of asking for a status recap.
 
+> **Looking for build status, not documentation status?** Documentation is now 100% complete, so this file is largely a historical record. Implementation progress — database, API, service functions, landing/admin/member UI and API binding, feature by feature — is tracked in **`implementation-tracker.md`**.
+
 Last updated: 2026-08-07 (rev. 10 — Admin & Super Admin Dashboard fully drafted, 40 pages; every planned feature area now covered)
 
 ---
